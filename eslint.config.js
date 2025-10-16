@@ -19,5 +19,25 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
+      'semi': ['error', 'always', { omitLastInOneLineBlock: false }],
+      'comma-dangle': ['error', 'never'],
+      quotes: ['error', 'single'],
+      'react/prop-types': 'off',
+      indent: ['error', 'tab'],
+      "no-unused-vars": [
+        "warn",
+        { "varsIgnorePattern": "^React$" }
+      ]
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
   },
 ])
