@@ -1,13 +1,14 @@
 .button {
-    border-radius: 28.5px;
-    padding: 8px 30px;
     font-family: inherit;
     font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
     color: var(--white-color);
     cursor: pointer;
     border: none;
-    width: 248px;
-    height: 60px;
+    border-radius: 29px;
+    width: auto;
+    flex: 0 0 auto;
 }
 
 .accent {
@@ -25,5 +26,10 @@
     transform: translateY(2px);
 }
 
+.big {
+    padding: 20px 60px;
+}
 
-
+.small {
+    padding: 10px 25px;
+}

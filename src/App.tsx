@@ -1,10 +1,8 @@
-import Button from './components/Button/Button.tsx';
+import LoginForm from './components/LoginForm/LoginForm.tsx';
 
 function App() {
 	return (
-		<>
-			<Button>Приветики</Button>
-		</>
+		<LoginForm/>
 	);
 }
 
