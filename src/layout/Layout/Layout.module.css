@@ -54,6 +54,10 @@
     color: var(--text-color)
 }
 
+.active {
+    color: var(--primary-color)
+}
+
 .exit {
     margin-top: auto;
     display: flex;
