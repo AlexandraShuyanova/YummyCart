@@ -1,8 +1,9 @@
-import LoginForm from './components/LoginForm/LoginForm.tsx';
-
 function App() {
+
 	return (
-		<LoginForm/>
+		<>
+
+		</>
 	);
 }
 

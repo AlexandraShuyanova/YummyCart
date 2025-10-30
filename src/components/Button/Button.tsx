@@ -2,12 +2,11 @@ import styles from './Button.module.css';
 import type {ButtonProps} from './Button.props.ts';
 import cn from 'classnames';
 
-function Button({children, appearance='small', ...props} : ButtonProps) {
+function Button({children, appearance='small', className, ...props} : ButtonProps) {
 	return (
-		<button className={cn(styles['button'], styles['accent'], {
+		<button className={cn(styles['button'], styles['accent'], className, {
 			[styles['big']]: appearance === 'big',
 			[styles['small']]: appearance === 'small'
-
 		})} {...props}>{children}</button>
 	);
 }
