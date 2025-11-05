@@ -8,9 +8,6 @@
     height: 100vh;
     box-sizing: border-box;
     border-right: 1px solid var(--separator-color);
-    width: fit-content;
-    min-width: max-content;
-    justify-content: space-between;
 }
 
 .menu {
@@ -65,4 +62,10 @@
     align-items: center;
     gap: 9px;
     /*padding-right: 50px;*/
+}
+
+.content {
+    padding: 40px 60px;
+    width: 100%;
+    height: 100%;
 }
