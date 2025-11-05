@@ -26,7 +26,11 @@ const router = createBrowserRouter([
 		path: '*',
 		element: <Error/>
 	}
-]);
+],
+{
+	basename: '/YummyCart/'
+}
+);
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<RouterProvider router={router}/>
