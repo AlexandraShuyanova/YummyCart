@@ -1,0 +1,34 @@
+.dish-card {
+    background: #FFFFFF;
+    box-shadow: 18.2143px 18.2143px 36.4286px rgba(211, 209, 216, 0.25);
+    border-radius: 18.2143px;
+    position: relative;
+}
+
+.title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18.2143px;
+    line-height: 25px;
+    color: var(--text-color);
+}
+
+.description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5714px;
+    line-height: 20px;
+    color: var(--text-secondary-color);
+}
+
+.cart-icon {
+    position: absolute;
+    right: -10px;
+}
+
+
+
+
+
+
+
