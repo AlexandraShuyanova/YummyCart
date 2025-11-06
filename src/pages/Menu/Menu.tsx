@@ -2,7 +2,7 @@ import Header from '../../components/Header/Header.tsx';
 import styles from './Menu.module.css';
 import Search from '../../components/Search/Search.tsx';
 import DishCard from '../../components/DishCard/DishCard.tsx';
-import card_1 from '../../assets/card_1.svg';
+import card_1 from '../../assets/cards/card_1.svg';
 
 export function Menu() {
 	return (
