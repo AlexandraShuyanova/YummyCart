@@ -12,23 +12,23 @@ export function Menu() {
 				<Search className={styles['search-input']}/>
 			</div>
 			<div className={styles['cards-container']}>
-				<DishCard className={styles['card']} id={1} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
+				<DishCard id={1} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
 						  image={card_1} price={300} rating={4.5}/>
-				<DishCard className={styles['card']} id={2} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
+				<DishCard id={2} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
 						  image={card_1} price={300} rating={4.5}/>
-				<DishCard className={styles['card']} id={3} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
+				<DishCard id={3} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
 						  image={card_1} price={300} rating={4.5}/>
-				<DishCard className={styles['card']} id={1} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
+				<DishCard id={4} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
 						  image={card_1} price={300} rating={4.5}/>
-				<DishCard className={styles['card']} id={2} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
+				<DishCard id={5} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
 						  image={card_1} price={300} rating={4.5}/>
-				<DishCard className={styles['card']} id={3} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
+				<DishCard id={6} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
 						  image={card_1} price={300} rating={4.5}/>
-				<DishCard className={styles['card']} id={1} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
+				<DishCard id={7} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
 						  image={card_1} price={300} rating={4.5}/>
-				<DishCard className={styles['card']} id={2} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
+				<DishCard id={8} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
 						  image={card_1} price={300} rating={4.5}/>
-				<DishCard className={styles['card']} id={3} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
+				<DishCard id={9} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
 						  image={card_1} price={300} rating={4.5}/>
 
 			</div>

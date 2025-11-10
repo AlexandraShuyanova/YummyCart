@@ -1,19 +1,35 @@
 import styles from './DishCard.module.css';
 import type {DishCardProps} from './DishCard.props.ts';
-import cn from 'classnames';
-import cardCart from '../../assets/cardCart.svg';
+import cartItemButton from '../../assets/cart-button-icon.svg';
+import ratingStar from '../../assets/rating-star.svg';
+import {Link} from 'react-router-dom';
 
-function DishCard({className, id, title, image, description, price, rating} : DishCardProps) {
+function DishCard(props : DishCardProps) {
 	return (
-		<div key={id} className={cn(styles['dish-card'], className)}>
-			<img className={styles['image']} src={image}></img>
-			<img className={styles['cart-icon']} src={cardCart}></img>
-			<h2 className={styles['title']}>{title}</h2>
-			<p className={styles['description']}>{description}</p>
-			<p className={styles['price']}>{price}</p>
-			<p className={styles['rating']}>{rating}</p>
-		</div>
-	);
+		<Link to='/' className={styles['link']}>
+			<div key={props.id} className={styles['dish-card']}>
+				<div className={styles['head']} style={{backgroundImage: `url(${props.image})`}}>
+					<div className={styles['price']}>
+						{props.price}&nbsp;
+						<span className={styles['currency']}>₽</span>
+					</div>
+					<button className={styles['add-to-cart-button']}>
+						<img src={cartItemButton} alt='Add to cart'></img>
+					</button>
+					<div className={styles['rating']}>
+						{props.rating}&nbsp;
+						<img className={styles['star-icon']} src={ratingStar} alt='Star icon'></img>
+					</div>
+				</div>
+				<div className={styles['footer']}>
+					<h2 className={styles['title']}>{props.title}</h2>
+					<p className={styles['description']}>{props.description}</p>
+				</div>
+			</div>
+		</Link>
+
+
+);
 }
 
 export default DishCard;

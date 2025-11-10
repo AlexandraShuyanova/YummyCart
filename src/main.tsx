@@ -28,7 +28,7 @@ const router = createBrowserRouter([
 	}
 ],
 {
-	basename: '/YummyCart/'
+	basename: import.meta.env.DEV ? '/' : '/YummyCart/'
 }
 );
 createRoot(document.getElementById('root')!).render(
