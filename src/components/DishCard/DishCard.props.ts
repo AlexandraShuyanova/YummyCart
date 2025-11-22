@@ -1,7 +1,7 @@
 export interface DishCardProps {
     id: number,
     className?: string,
-    title: string,
+    name: string,
     description: string,
     image: string,
     price: number,

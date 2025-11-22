@@ -2,9 +2,38 @@ import Header from '../../components/Header/Header.tsx';
 import styles from './Menu.module.css';
 import Search from '../../components/Search/Search.tsx';
 import DishCard from '../../components/DishCard/DishCard.tsx';
-import card_1 from '../../assets/cards/card_1.svg';
+import {PREFIX} from '../../helpers/API.ts';
+import type {Dish} from '../../interfaces/dish.interface.ts';
+import {useEffect, useState} from 'react';
+import axios from 'axios';
 
 export function Menu() {
+	const [dishes, setDishes] = useState<Dish[]>([]);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
+
+	const getMenu = async() => {
+		try {
+			setIsLoading(true);
+			await new Promise<void>((resolve) => {
+				setTimeout(() => {
+					resolve();
+				}, 2000);
+			});
+			const {data} = await axios.get<Dish[]>(`${PREFIX}/products`);
+			setDishes(data);
+			setIsLoading(false);
+		}
+		catch (e) {
+			console.error(e);
+			setIsLoading(false);
+			return;
+		}
+	};
+
+	useEffect(() => {
+		getMenu();
+	},[]);
+
 	return (
 		<>
 			<div className={styles['head']}>
@@ -12,27 +41,21 @@ export function Menu() {
 				<Search className={styles['search-input']}/>
 			</div>
 			<div className={styles['cards-container']}>
-				<DishCard id={1} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
-						  image={card_1} price={300} rating={4.5}/>
-				<DishCard id={2} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
-						  image={card_1} price={300} rating={4.5}/>
-				<DishCard id={3} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
-						  image={card_1} price={300} rating={4.5}/>
-				<DishCard id={4} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
-						  image={card_1} price={300} rating={4.5}/>
-				<DishCard id={5} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
-						  image={card_1} price={300} rating={4.5}/>
-				<DishCard id={6} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
-						  image={card_1} price={300} rating={4.5}/>
-				<DishCard id={7} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
-						  image={card_1} price={300} rating={4.5}/>
-				<DishCard id={8} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
-						  image={card_1} price={300} rating={4.5}/>
-				<DishCard id={9} title='Наслаждение' description='Салями, руккола, помидоры, оливки'
-						  image={card_1} price={300} rating={4.5}/>
-
+				{!isLoading && dishes.map(dish => (
+					<DishCard
+						key={dish.id}
+						id={dish.id}
+						name={dish.name}
+						description={dish.ingredients.join(',')}
+						rating={dish.rating}
+						price={dish.price}
+						image={dish.image}
+					/>
+				))}
+				{isLoading &&
+					<p>Loading dishes...</p>
+				}
 			</div>
 		</>
-
 	);
 };

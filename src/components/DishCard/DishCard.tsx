@@ -6,9 +6,15 @@ import {Link} from 'react-router-dom';
 
 function DishCard(props : DishCardProps) {
 	return (
-		<Link to='/' className={styles['link']}>
+		<Link to={`/dish/${props.id}`} className={styles['link']}>
 			<div key={props.id} className={styles['dish-card']}>
-				<div className={styles['head']} style={{backgroundImage: `url(${props.image})`}}>
+				<div className={styles['head']} style={{
+					backgroundImage: `url(${props.image})`,
+					backgroundRepeat: 'no-repeat',
+					backgroundSize: 'cover',
+					backgroundPosition: 'center'
+				}}
+				>
 					<div className={styles['price']}>
 						{props.price}&nbsp;
 						<span className={styles['currency']}>₽</span>
@@ -22,14 +28,14 @@ function DishCard(props : DishCardProps) {
 					</div>
 				</div>
 				<div className={styles['footer']}>
-					<h2 className={styles['title']}>{props.title}</h2>
+					<h2 className={styles['name']}>{props.name}</h2>
 					<p className={styles['description']}>{props.description}</p>
 				</div>
 			</div>
 		</Link>
 
 
-);
+	);
 }
 
 export default DishCard;
