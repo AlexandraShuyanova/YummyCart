@@ -5,4 +5,12 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   plugins: [react()],
   base: process.env.NODE_ENV === 'production' ? '/YummyCart/' : '/',
+  server: {
+    proxy: {
+      '/pizza-api': {
+        target: 'http://backend:3001',
+        changeOrigin: true,
+      },
+    },
+  },
 })

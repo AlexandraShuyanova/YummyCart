@@ -1,2 +1,2 @@
-export const PREFIX = 'http://localhost:4000/pizza-api';
+export const PREFIX = '/pizza-api';
 

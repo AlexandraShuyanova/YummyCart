@@ -6,7 +6,7 @@ const cors = require('cors');
 import type { Request, Response, NextFunction } from 'express';
 
 const app = express();
-const PORT = 4000;
+const PORT = 3001;
 
 app.use(cors());
 app.use(express.json());
