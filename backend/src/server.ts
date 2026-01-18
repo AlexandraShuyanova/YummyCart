@@ -122,7 +122,8 @@ app.post('/pizza-api/auth/login', async (req: Request, res: Response) => {
 
 app.get('/pizza-api/user/profile', auth, (req: AuthRequest, res: Response) => {
     const user = users.find(u => u.id === req.user!.id);
-    if (!user) return res.status(404).json({ error: 'User not found' });
+    if (!user)
+        return res.status(404).json({ error: 'User not found' });
     res.json({ id: user.id, email: user.email, name: user.name });
 });
 
@@ -130,7 +131,9 @@ app.get('/pizza-api/user/profile', auth, (req: AuthRequest, res: Response) => {
 app.get('/pizza-api/products', (req: Request, res: Response) => {
     const { name } = req.query;
     let list = products;
-    if (name && typeof name === 'string') list = products.filter(p => p.name.toLowerCase().includes(name.toLowerCase()));
+    if (name && typeof name === 'string')
+        list = products.filter(p =>
+            p.name.toLowerCase().includes(name.toLowerCase()));
     res.json(list);
 });
 
@@ -138,7 +141,8 @@ app.get('/pizza-api/products', (req: Request, res: Response) => {
 app.get('/pizza-api/products/:id', (req: Request, res: Response) => {
     const id = Number(req.params.id);
     const product = products.find(p => p.id === id);
-    if (!product) return res.status(404).json({ error: 'Not found' });
+    if (!product)
+        return res.status(404).json({ error: 'Not found' });
     res.json(product);
 });
 

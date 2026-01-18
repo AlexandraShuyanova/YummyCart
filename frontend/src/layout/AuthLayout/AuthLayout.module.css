@@ -1,0 +1,28 @@
+.layout {
+    display: flex;
+    max-width: 1400px;
+    outline: 2px solid red;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    flex: 1;
+    padding: 30px;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: sticky;
+}
+
+.divider {
+    width: 1px;
+    background-color: var( --separator-color);
+    height: 100vh;
+}
+
+.content {
+    flex: 1;
+    padding: 40px 60px;
+    height: 100%;
+}

@@ -1,27 +1,22 @@
 import Header from '../../components/Header/Header.tsx';
 import styles from './Menu.module.css';
 import Search from '../../components/Search/Search.tsx';
-import DishCard from '../../components/DishCard/DishCard.tsx';
+import ProductCard from '../../components/ProductCard/ProductCard.tsx';
 import {PREFIX} from '../../helpers/API.ts';
-import type {Dish} from '../../interfaces/dish.interface.ts';
+import type {Product} from '../../interfaces/product.interface.ts';
 import {useEffect, useState} from 'react';
 import axios, {AxiosError} from 'axios';
 
-export function Menu() {
-	const [dishes, setDishes] = useState<Dish[]>([]);
+function Menu() {
+	const [products, setProducts] = useState<Product[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [error, setError] = useState<string | undefined>();
 
 	const getMenu = async() => {
 		try {
 			setIsLoading(true);
-			await new Promise<void>((resolve) => {
-				setTimeout(() => {
-					resolve();
-				}, 2000);
-			});
-			const {data} = await axios.get<Dish[]>(`${PREFIX}/products`);
-			setDishes(data);
+			const {data} = await axios.get<Product[]>(`${PREFIX}/products`);
+			setProducts(data);
 			setIsLoading(false);
 		}
 		catch (e) {
@@ -46,15 +41,15 @@ export function Menu() {
 			</div>
 			<div className={styles['cards-container']}>
 				{error && <>{error}</>}
-				{!isLoading && dishes.map(dish => (
-					<DishCard
-						key={dish.id}
-						id={dish.id}
-						name={dish.name}
-						description={dish.ingredients.join(',')}
-						rating={dish.rating}
-						price={dish.price}
-						image={dish.image}
+				{!isLoading && products.map(product => (
+					<ProductCard
+						key={product.id}
+						id={product.id}
+						name={product.name}
+						description={product.ingredients.join(',')}
+						rating={product.rating}
+						price={product.price}
+						image={product.image}
 					/>
 				))}
 				{isLoading &&
@@ -64,3 +59,4 @@ export function Menu() {
 		</>
 	);
 };
+export default Menu;

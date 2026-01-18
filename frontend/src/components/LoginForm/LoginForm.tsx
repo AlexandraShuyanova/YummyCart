@@ -6,6 +6,7 @@ import Button from '../Button/Button.tsx';
 function LoginForm({className, ...props} : LoginFormProps) {
 	return (
 		<form className={styles['login-form']} {...props}>
+			<h2 className={styles['form-title']}>Log In</h2>
 			<div className={styles['form-row']}>
 				<label>Your email</label>
 				<Input type="text" placeholder="Email"/>
@@ -14,7 +15,7 @@ function LoginForm({className, ...props} : LoginFormProps) {
 				<label>Your password</label>
 				<Input type="text" placeholder="Password"/>
 			</div>
-			<Button appearance="big">Sign In</Button>
+			<Button appearance="big">Log In</Button>
 			<Button appearance="small">Accept</Button>
 		</form>
 	);

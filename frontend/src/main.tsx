@@ -1,41 +1,73 @@
-import { StrictMode } from 'react';
+import {lazy, StrictMode, Suspense} from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-import {Menu} from './pages/Menu/Menu.tsx';
 import {Cart} from './pages/Cart/Cart.tsx';
-import {Error} from './pages/Error/Error.tsx';
+import {Error as ErrorPage} from './pages/Error/Error.tsx';
 import {Layout} from './layout/Layout/Layout.tsx';
-import Dish from "./pages/Dish/Dish.tsx";
+import {AuthLayout} from './layout/AuthLayout/AuthLayout.tsx';
+import {Product} from './pages/Product/Product.tsx';
+import axios from 'axios';
+import {PREFIX} from './helpers/API.ts';
+import {Login} from "./pages/Login/Login.tsx";
+import {Register} from "./pages/Register/Register.tsx";
 
-const router = createBrowserRouter([
+const Menu = lazy(() => import('./pages/Menu/Menu.tsx'));
+const router = createBrowserRouter(
+	[
+		{
+			path: '/',
+			element: <Layout />,
+			children: [
+				{
+					index: true,
+					element: (<Suspense fallback={<>Loading...</>}><Menu /></Suspense>)
+				},
+				{
+					path: 'cart',
+					element: <Cart />
+				},
+				{
+					path: 'product/:id',
+					element: (
+						<Suspense fallback={<>Loading...</>}>
+							<Product />
+						</Suspense>
+					),
+					errorElement: <>Error!</>,
+					loader: async ({ params }) => {
+						const { data } = await axios.get(
+							`${PREFIX}/products/${params.id}`
+						);
+						return data;
+					}
+				}
+			]
+		},
+		{
+			path: 'auth',
+			element: <AuthLayout />,
+			children: [
+				{
+					path: 'login',
+					element: <Login/>
+				},
+				{
+					path: 'register',
+					element: <Register />
+				}
+			]
+		},
+		{
+			path: '*',
+			element: <ErrorPage />
+		}
+	],
 	{
-		path: '/',
-		element: <Layout/>,
-		children: [
-			{
-				path: '/',
-				element: <Menu/>
-			},
-			{
-				path: '/cart',
-				element: <Cart/>
-			},
-			{
-				path: '/dish/:id',
-				element: <Dish/>
-			}
-		]
-	},
-	{
-		path: '*',
-		element: <Error/>
+		basename: import.meta.env.DEV ? '/' : '/YummyCart/'
 	}
-],
-{
-	basename: import.meta.env.DEV ? '/' : '/YummyCart/'
-}
 );
+
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
 		<RouterProvider router={router}/>
