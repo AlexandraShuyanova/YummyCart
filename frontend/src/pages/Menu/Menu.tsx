@@ -6,17 +6,32 @@ import {PREFIX} from '../../helpers/API.ts';
 import type {Product} from '../../interfaces/product.interface.ts';
 import {useEffect, useState} from 'react';
 import axios, {AxiosError} from 'axios';
+import Pagination from '../../components/Pagination/Pagination.tsx';
 
 function Menu() {
+
+	type ProductsPagedResponse = {
+		page: number;
+		size: number;
+		total: number;
+		totalPages: number;
+		items: Product[];
+	};
+
 	const [products, setProducts] = useState<Product[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [error, setError] = useState<string | undefined>();
+	const size = 6;
+	const [page, setPage] = useState<number>(1);
+	const [totalPages, setTotalPages] = useState<number>(1);
 
-	const getMenu = async() => {
+	const loadMenu = async() => {
 		try {
 			setIsLoading(true);
-			const {data} = await axios.get<Product[]>(`${PREFIX}/products`);
-			setProducts(data);
+			//const {data} = await axios.get<Product[]>(`${PREFIX}/products`);
+			const {data} = await axios.get<ProductsPagedResponse>(`${PREFIX}/products-paged/?page=${page - 1}&size=${size}`);
+			setProducts(data.items);
+			setTotalPages(data.totalPages);
 			setIsLoading(false);
 		}
 		catch (e) {
@@ -30,11 +45,11 @@ function Menu() {
 	};
 
 	useEffect(() => {
-		getMenu();
-	},[]);
+		loadMenu();
+	},[page]);
 
 	return (
-		<>
+		<div className={styles['menu-wrapper']}>
 			<div className={styles['head']}>
 				<Header>Menu</Header>
 				<Search className={styles['search-input']}/>
@@ -56,7 +71,14 @@ function Menu() {
 					<p>Loading dishes...</p>
 				}
 			</div>
-		</>
+			<div className={styles.paginationWrapper}>
+				<Pagination
+					currentPage={page}
+					totalPages={totalPages}
+					onChange={setPage}
+				/>
+			</div>
+		</div>
 	);
 };
 export default Menu;

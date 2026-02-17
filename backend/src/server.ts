@@ -46,7 +46,6 @@ interface Order {
     createdAt: Date;
 }
 
-
 interface AuthRequest extends Request {
     user?: { id: number; email: string };
 }
@@ -55,12 +54,26 @@ interface AuthRequest extends Request {
 // ===== MOCK DATABASE =====
 const users: User[] = [];
 const products: Product[] = [
-    { id: 1, name: 'Наслаждение', price: 300, ingredients: ['салями','руккола','помидоры','оливки'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png', rating: 4.7 },
-    { id: 2, name: 'Такос', price: 280, ingredients: ['острый перец','лепёшка','фарш'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
-    { id: 3, name: 'Аццки острая', price: 320, ingredients: ['острый соус','грибы','помидоры','оливки'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food3.png', rating: 4.9 },
-    { id: 4, name: 'Жаркое с сыром', price: 290, ingredients: ['картофель','сыр','перец','фарш'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png', rating: 4.4 },
-    { id: 5, name: 'Цезарь с курицей', price: 290, ingredients: ['курица','сыр','соус Цезарь','помидоры'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food5.png', rating: 4.8 },
-    { id: 6, name: 'Зелёный салат', price: 290, ingredients: ['огурец','орехи','перец'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food6.png', rating: 4.5 }
+        { id: 1, name: 'Delight', price: 300, ingredients: ['salami','arugula','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png', rating: 4.7 },
+        { id: 2, name: 'Tacos', price: 280, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
+        { id: 3, name: 'Extra Spicy', price: 320, ingredients: ['spicy sauce','mushrooms','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food3.png', rating: 4.9 },
+        { id: 4, name: 'Roast with Cheese', price: 290, ingredients: ['potatoes','cheese','pepper','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png', rating: 4.4 },
+        { id: 5, name: 'Caesar with Chicken', price: 290, ingredients: ['chicken','cheese','caesar sauce','tomatoes'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food5.png', rating: 4.8 },
+        { id: 6, name: 'Green Salad', price: 290, ingredients: ['cucumber','nuts','pepper'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food6.png', rating: 4.5 },
+
+        { id: 7, name: 'Delight', price: 300, ingredients: ['salami','arugula','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png', rating: 4.7 },
+        { id: 8, name: 'Tacos', price: 280, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
+        { id: 9, name: 'Extra Spicy', price: 320, ingredients: ['spicy sauce','mushrooms','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food3.png', rating: 4.9 },
+        { id: 10, name: 'Roast with Cheese', price: 290, ingredients: ['potatoes','cheese','pepper','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png', rating: 4.4 },
+        { id: 11, name: 'Caesar with Chicken', price: 290, ingredients: ['chicken','cheese','caesar sauce','tomatoes'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food5.png', rating: 4.8 },
+        { id: 12, name: 'Green Salad', price: 290, ingredients: ['cucumber','nuts','pepper'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food6.png', rating: 4.5 },
+
+        { id: 13, name: 'Delight', price: 300, ingredients: ['salami','arugula','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png', rating: 4.7 },
+        { id: 14, name: 'Tacos', price: 280, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
+        { id: 15, name: 'Extra Spicy', price: 320, ingredients: ['spicy sauce','mushrooms','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food3.png', rating: 4.9 },
+        { id: 16, name: 'Roast with Cheese', price: 290, ingredients: ['potatoes','cheese','pepper','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png', rating: 4.4 },
+        { id: 17, name: 'Caesar with Chicken', price: 290, ingredients: ['chicken','cheese','caesar sauce','tomatoes'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food5.png', rating: 4.8 },
+        { id: 18, name: 'Green Salad', price: 290, ingredients: ['cucumber','nuts','pepper'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food6.png', rating: 4.5 }
 ];
 const orders: Order[] = [];
 
@@ -135,6 +148,50 @@ app.get('/pizza-api/products', (req: Request, res: Response) => {
         list = products.filter(p =>
             p.name.toLowerCase().includes(name.toLowerCase()));
     res.json(list);
+});
+
+app.get('/pizza-api/products-paged', (req: Request, res: Response) => {
+    const {
+        page = '1',
+        size = '10',
+        sortby,
+        order = 'asc',
+        name
+    } = req.query;
+
+    let list = [...products];
+
+    // 🔍 Фильтрация по имени
+    if (name && typeof name === 'string') {
+        list = list.filter(p =>
+            p.name.toLowerCase().includes(name.toLowerCase())
+        );
+    }
+
+    // 🔃 Сортировка
+    if (sortby && typeof sortby === 'string') {
+        list.sort((a: any, b: any) => {
+            if (a[sortby] < b[sortby]) return order === 'desc' ? 1 : -1;
+            if (a[sortby] > b[sortby]) return order === 'desc' ? -1 : 1;
+            return 0;
+        });
+    }
+
+    // 📄 Пагинация
+    const pageNum = Number(page);
+    const sizeNum = Number(size);
+    const start = pageNum * sizeNum;
+    const end = start + sizeNum;
+
+    const paginated = list.slice(start, end);
+
+    res.json({
+        page: pageNum,
+        size: sizeNum,
+        total: list.length,
+        totalPages: Math.ceil(list.length / sizeNum),
+        items: paginated
+    });
 });
 
 

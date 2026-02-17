@@ -13,8 +13,8 @@ export function Layout() {
 			<div className={styles['sidebar']}>
 				<div className={styles['user']}>
 					<img className={styles['avatar']} src={avatar} alt="User's avatar"></img>
-					<div className={styles['name']}>Anton Larichev</div>
-					<div className={styles['email']}>alaricode@ya.ru</div>
+					<div className={styles['name']}>Aleksandra Shuianova</div>
+					<div className={styles['email']}>alexandra.sh0202@gmail.com</div>
 				</div>
 				<div className={styles['menu']}>
 					<NavLink to='/' className={({isActive}) => cn(styles['link'], {
