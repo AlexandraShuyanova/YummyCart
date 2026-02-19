@@ -53,6 +53,7 @@ interface AuthRequest extends Request {
 
 // ===== MOCK DATABASE =====
 const users: User[] = [];
+
 const products: Product[] = [
         { id: 1, name: 'Delight', price: 300, ingredients: ['salami','arugula','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png', rating: 4.7 },
         { id: 2, name: 'Tacos', price: 280, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },

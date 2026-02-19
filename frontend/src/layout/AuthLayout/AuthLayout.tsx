@@ -8,7 +8,6 @@ export function AuthLayout() {
 			<div className={styles['logo']}>
 				<img className={styles['logo']} src={logo} alt="Logo"></img>
 			</div>
-			<div className={styles.divider}/>
 			<div className={styles['content']}>
 				<Outlet/>
 			</div>

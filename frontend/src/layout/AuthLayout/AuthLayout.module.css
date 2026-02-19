@@ -1,28 +1,24 @@
 .layout {
     display: flex;
-    max-width: 1400px;
-    outline: 2px solid red;
-    margin: 0 auto;
+    max-width: 1800px;
     width: 100%;
+    min-height: 100vh;
 }
 
 .logo {
     display: flex;
     flex: 1;
-    padding: 30px;
+    padding: 120px;
     flex-direction: column;
     box-sizing: border-box;
-    position: sticky;
-}
-
-.divider {
-    width: 1px;
-    background-color: var( --separator-color);
-    height: 100vh;
+    align-items: center;
+    justify-content: center;
 }
 
 .content {
+    display: flex;
     flex: 1;
-    padding: 40px 60px;
-    height: 100%;
+    border-left: 1px solid var(--separator-color);
+    align-items: center;
+    justify-content: center;
 }
