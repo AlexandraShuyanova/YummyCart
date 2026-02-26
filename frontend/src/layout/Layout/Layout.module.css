@@ -95,10 +95,8 @@
 .exit {
     margin-top: auto;
     display: flex;
-    align-items: center;
     gap: 9px;
-    width: max-content;
-    align-self: flex-start;
+    align-self: center;
     /*padding-right: 50px;*/
 }
 

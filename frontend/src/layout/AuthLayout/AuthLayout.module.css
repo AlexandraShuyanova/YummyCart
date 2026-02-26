@@ -8,11 +8,14 @@
 .logo {
     display: flex;
     flex: 1;
-    padding: 120px;
     flex-direction: column;
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
+}
+
+.logo img {
+    max-width: 450px;
 }
 
 .content {
