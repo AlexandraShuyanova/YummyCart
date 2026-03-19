@@ -1,5 +1,5 @@
 import {configureStore} from '@reduxjs/toolkit';
-import {JWT_PERSISTENT_STATE, userSlice} from './user.slice.ts';
+import {JWT_KEY, userSlice} from './user.slice.ts';
 import {saveState} from './storage.ts';
 
 export const store = configureStore({
@@ -9,8 +9,8 @@ export const store = configureStore({
 });
 
 store.subscribe(() => {
-	saveState({jwt: store.getState().user.jwt}, JWT_PERSISTENT_STATE);
+	saveState({jwt: store.getState().user.jwt}, JWT_KEY);
 });
 
 export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
+export type AppDispatch = typeof store. dispatch;

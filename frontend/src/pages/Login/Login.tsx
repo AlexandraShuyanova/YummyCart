@@ -2,13 +2,10 @@ import styles from './Login.module.css';
 import {Link, useNavigate} from 'react-router-dom';
 import Input from '../../components/Input/Input.tsx';
 import Button from '../../components/Button/Button.tsx';
-import {type FormEvent, useState} from 'react';
-import axios, {AxiosError} from 'axios';
-import {PREFIX} from '../../helpers/API.ts';
-import type {LoginResponse} from "../../interfaces/auth.interface.ts";
-import {useDispatch} from "react-redux";
-import type {AppDispatch} from '../../store/store.ts';
-import {userActions} from "../../store/user.slice.ts";
+import {type FormEvent, useEffect, useState} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import type {AppDispatch, RootState} from '../../store/store.ts';
+import {login, userActions} from "../../store/user.slice.ts";
 
 export type LoginForm = {
 	email: {
@@ -23,9 +20,18 @@ export function Login() {
 	const [error, setError] = useState<string | null>();
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
+	const jwt = useSelector((state: RootState) => state.user.jwt);
+
+	useEffect(() => {
+		if(jwt) {
+			navigate('/');
+		}
+	}, [jwt, navigate]);
 
 	const submit = async (e: FormEvent) => {
 		e.preventDefault();
+		setError(null);
+		//dispatch(userActions.clearLoginError());
 		const target = e.target as typeof e.target & LoginForm;
 		const {email, password} = target;
 		console.log(email.value, password.value);
@@ -33,7 +39,8 @@ export function Login() {
 	};
 
 	const sendLogin = async (email: string, password: string) => {
-		try {
+		dispatch(login({email, password}));
+		/*try {
 			const {data}= await axios.post<LoginResponse>(`${PREFIX}/auth/login`, {
 				email,
 				password
@@ -46,7 +53,7 @@ export function Login() {
 				setError(e.response?.data.error);
 				console.log(e);
 			}
-		}
+		}*/
 	};
 
 	return <div className={styles['login']}>
@@ -59,7 +66,7 @@ export function Login() {
 			</div>
 			<div className={styles['row']}>
 				<label htmlFor="password">Your password</label>
-				<Input id="password" name="password'" type="password" placeholder="Password"/>
+				<Input id="password" name="password" type="password" placeholder="Password"/>
 			</div>
 			<Button appearance="big">Log In</Button>
 		</form>

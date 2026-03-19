@@ -6,11 +6,15 @@ import avatar from '../../assets/avatar.png';
 import menu from '../../assets/menu.svg';
 import cart from '../../assets/cart.svg';
 import exitBtn from '../../assets/exitBtn.svg';
+import {useDispatch} from 'react-redux';
+import type {AppDispatch} from '../../store/store.ts';
+import {userActions} from '../../store/user.slice.ts';
 
 export function Layout() {
 	const navigate = useNavigate();
+	const dispatch = useDispatch<AppDispatch>();
 	const logout = () => {
-		localStorage.removeItem('jwt');
+		dispatch(userActions.logout());
 		navigate('/auth/login');
 	};
 

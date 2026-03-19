@@ -1,31 +1,49 @@
-import {createSlice, type PayloadAction} from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice, type PayloadAction} from '@reduxjs/toolkit';
 import {loadState} from './storage.ts';
+import axios from 'axios';
+import type {LoginResponse} from '../interfaces/auth.interface.ts';
+import {PREFIX} from '../helpers/API.ts';
 
-export const JWT_PERSISTENT_STATE = 'userData';
+export const JWT_KEY = 'jwtData';
 
-export interface UserPersistentState {
+export interface JwtDataType {
     jwt: null | string;
 }
 export interface UserState {
     jwt: null | string;
+	loginErrorMessage?: string;
 }
 
 const initialState : UserState  = {
-	jwt: loadState<UserPersistentState>(JWT_PERSISTENT_STATE ) ?.jwt ?? null
+	jwt: loadState<JwtDataType>(JWT_KEY )?.jwt  ?? null
 };
+
+export const login = createAsyncThunk('user/login',
+	async (params: {email: string; password: string}) => {
+		const {data} = await axios.post<LoginResponse>(`${PREFIX}/auth/login`, {
+			email: params.email,
+			password: params.password
+		});
+		return data;
+	}
+);
 
 export const userSlice = createSlice({
 	name: 'user',
 	initialState,
 	reducers: {
-		addJwt: (state, action: PayloadAction<string>) => {
-			state.jwt = action.payload;
-		},
 		logout: (state) => {
 			state.jwt = null;
 		}
+	},
+	extraReducers: (builder) => {
+		builder.addCase(login.fulfilled, (state, action: PayloadAction<LoginResponse>) => {
+			state.jwt = action.payload.token;
+		});
+		builder.addCase(login.rejected, (state, action) => {
+			state.loginErrorMessage = action.error.message;
+		});
 	}
 });
 
-export default userSlice.reducer;
 export const userActions = userSlice.actions;
