@@ -1,6 +1,6 @@
-import {createAsyncThunk, createSlice, type PayloadAction} from '@reduxjs/toolkit';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import {loadState} from './storage.ts';
-import axios from 'axios';
+import axios, {AxiosError} from 'axios';
 import type {LoginResponse} from '../interfaces/auth.interface.ts';
 import {PREFIX} from '../helpers/API.ts';
 
@@ -20,11 +20,19 @@ const initialState : UserState  = {
 
 export const login = createAsyncThunk('user/login',
 	async (params: {email: string; password: string}) => {
-		const {data} = await axios.post<LoginResponse>(`${PREFIX}/auth/login`, {
-			email: params.email,
-			password: params.password
-		});
-		return data;
+		try {
+			const {data} = await axios.post<LoginResponse>(`${PREFIX}/auth/login`, {
+				email: params.email,
+				password: params.password
+			});
+			return data;
+		} catch (e) {
+
+			if (e instanceof AxiosError) {
+				console.log(e);
+				throw new Error(e.response?.data.error);
+			}
+		}
 	}
 );
 
@@ -34,14 +42,23 @@ export const userSlice = createSlice({
 	reducers: {
 		logout: (state) => {
 			state.jwt = null;
+		},
+		clearLoginError: (state) => {
+			state.loginErrorMessage = undefined;
 		}
 	},
 	extraReducers: (builder) => {
-		builder.addCase(login.fulfilled, (state, action: PayloadAction<LoginResponse>) => {
+		builder.addCase(login.fulfilled, (state, action) => {
+			if(!action.payload) {
+				return;
+			}
 			state.jwt = action.payload.token;
 		});
 		builder.addCase(login.rejected, (state, action) => {
-			state.loginErrorMessage = action.error.message;
+			if(action.error.message)
+				state.loginErrorMessage = action.error.message;
+			else
+				state.loginErrorMessage = 'Login failed';
 		});
 	}
 });

@@ -2,10 +2,10 @@ import styles from './Login.module.css';
 import {Link, useNavigate} from 'react-router-dom';
 import Input from '../../components/Input/Input.tsx';
 import Button from '../../components/Button/Button.tsx';
-import {type FormEvent, useEffect, useState} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {type FormEvent, useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
-import {login, userActions} from "../../store/user.slice.ts";
+import {login, userActions} from '../../store/user.slice.ts';
 
 export type LoginForm = {
 	email: {
@@ -17,10 +17,9 @@ export type LoginForm = {
 }
 
 export function Login() {
-	const [error, setError] = useState<string | null>();
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
-	const jwt = useSelector((state: RootState) => state.user.jwt);
+	const {jwt, loginErrorMessage}= useSelector((state: RootState) => state.user);
 
 	useEffect(() => {
 		if(jwt) {
@@ -30,8 +29,7 @@ export function Login() {
 
 	const submit = async (e: FormEvent) => {
 		e.preventDefault();
-		setError(null);
-		//dispatch(userActions.clearLoginError());
+		dispatch(userActions.clearLoginError());
 		const target = e.target as typeof e.target & LoginForm;
 		const {email, password} = target;
 		console.log(email.value, password.value);
@@ -58,7 +56,7 @@ export function Login() {
 
 	return <div className={styles['login']}>
 		<h2 className={styles['title']}>Log In</h2>
-		{error && <div className={styles['error']}>{error}</div>}
+		{loginErrorMessage && <div className={styles['error']}>{loginErrorMessage}</div>}
 		<form className={styles['form']} onSubmit={submit}>
 			<div className={styles['row']}>
 				<label htmlFor="email">Your email</label>
