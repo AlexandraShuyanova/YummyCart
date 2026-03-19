@@ -38,20 +38,6 @@ export function Login() {
 
 	const sendLogin = async (email: string, password: string) => {
 		dispatch(login({email, password}));
-		/*try {
-			const {data}= await axios.post<LoginResponse>(`${PREFIX}/auth/login`, {
-				email,
-				password
-			});
-			dispatch(userActions.addJwt(data.token));
-			navigate('/');
-			console.log(data);
-		} catch(e) {
-			if (e instanceof AxiosError) {
-				setError(e.response?.data.error);
-				console.log(e);
-			}
-		}*/
 	};
 
 	return <div className={styles['login']}>

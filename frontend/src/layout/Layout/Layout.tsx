@@ -6,13 +6,20 @@ import avatar from '../../assets/avatar.png';
 import menu from '../../assets/menu.svg';
 import cart from '../../assets/cart.svg';
 import exitBtn from '../../assets/exitBtn.svg';
-import {useDispatch} from 'react-redux';
-import type {AppDispatch} from '../../store/store.ts';
-import {userActions} from '../../store/user.slice.ts';
+import {useDispatch, useSelector} from 'react-redux';
+import type {AppDispatch, RootState} from '../../store/store.ts';
+import {getProfile, userActions} from '../../store/user.slice.ts';
+import {useEffect} from "react";
 
 export function Layout() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
+	const profile = useSelector((state: RootState) => state.user.profile);
+
+	useEffect(() => {
+		dispatch(getProfile());
+	}, [dispatch]);
+
 	const logout = () => {
 		dispatch(userActions.logout());
 		navigate('/auth/login');
@@ -23,8 +30,8 @@ export function Layout() {
 			<div className={styles['sidebar']}>
 				<div className={styles['user']}>
 					<img className={styles['avatar']} src={avatar} alt="User's avatar"></img>
-					<div className={styles['name']}>Aleksandra Shuianova</div>
-					<div className={styles['email']}>alexandra.sh0202@gmail.com</div>
+					<div className={styles['name']}>{profile?.name}</div>
+					<div className={styles['email']}>{profile?.email}</div>
 				</div>
 				<div className={styles['menu']}>
 					<NavLink to='/' className={({isActive}) => cn(styles['link'], {
