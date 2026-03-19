@@ -9,7 +9,7 @@ import exitBtn from '../../assets/exitBtn.svg';
 import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
 import {getProfile, userActions} from '../../store/user.slice.ts';
-import {useEffect} from "react";
+import {useEffect} from 'react';
 
 export function Layout() {
 	const navigate = useNavigate();

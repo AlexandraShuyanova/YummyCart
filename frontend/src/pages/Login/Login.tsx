@@ -33,11 +33,7 @@ export function Login() {
 		const target = e.target as typeof e.target & LoginForm;
 		const {email, password} = target;
 		console.log(email.value, password.value);
-		await sendLogin(email.value, password.value);
-	};
-
-	const sendLogin = async (email: string, password: string) => {
-		dispatch(login({email, password}));
+		dispatch(login({email: email.value, password: password.value}));
 	};
 
 	return <div className={styles['login']}>

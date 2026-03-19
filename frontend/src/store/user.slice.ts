@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import {loadState} from './storage.ts';
 import axios, {AxiosError} from 'axios';
-import type {LoginResponse} from '../interfaces/auth.interface.ts';
+import type {LoginResponse, RegisterResponse} from '../interfaces/auth.interface.ts';
 import {PREFIX} from '../helpers/API.ts';
 import type {Profile} from '../interfaces/user.interface.ts';
 import type {RootState} from './store.ts';
@@ -14,6 +14,7 @@ export interface JwtDataType {
 export interface UserState {
     jwt: null | string;
 	loginErrorMessage?: string;
+	registerErrorMessage?: string;
 	profile?: Profile;
 }
 
@@ -30,6 +31,25 @@ export const getProfile = createAsyncThunk<Profile, void, {state: RootState}>('u
 			}
 		});
 		return data;
+	}
+);
+
+export const register = createAsyncThunk('user/register',
+	async (params: {email: string; password: string; name: string}) => {
+		try {
+			const {data} = await axios.post<RegisterResponse>(`${PREFIX}/auth/register`, {
+				email: params.email,
+				password: params.password,
+				name: params.name
+			});
+			return data;
+		} catch (e) {
+
+			if (e instanceof AxiosError) {
+				console.log(e);
+				throw new Error(e.response?.data.error);
+			}
+		}
 	}
 );
 
@@ -60,6 +80,9 @@ export const userSlice = createSlice({
 		},
 		clearLoginError: (state) => {
 			state.loginErrorMessage = undefined;
+		},
+		clearRegisterError: (state) => {
+			state.registerErrorMessage = undefined;
 		}
 	},
 	extraReducers: (builder) => {
@@ -70,13 +93,19 @@ export const userSlice = createSlice({
 			state.jwt = action.payload.token;
 		});
 		builder.addCase(login.rejected, (state, action) => {
-			if(action.error.message)
-				state.loginErrorMessage = action.error.message;
-			else
-				state.loginErrorMessage = 'Login failed';
+			state.loginErrorMessage = action.error.message;
 		});
 		builder.addCase(getProfile.fulfilled, (state, action) => {
 			state.profile = action.payload;
+		});
+		builder.addCase(register.fulfilled, (state, action) => {
+			if(!action.payload) {
+				return;
+			}
+			state.jwt = action.payload.token;
+		});
+		builder.addCase(register.rejected, (state, action) => {
+			state.registerErrorMessage = action.error.message;
 		});
 	}
 });

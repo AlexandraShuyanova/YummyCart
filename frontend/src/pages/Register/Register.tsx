@@ -1,10 +1,11 @@
-import {type FormEvent, useState} from 'react';
-import axios, {AxiosError} from 'axios';
-import {PREFIX} from '../../helpers/API.ts';
+import {type FormEvent, useEffect} from 'react';
 import styles from '../Register/Register.module.css';
 import Input from '../../components/Input/Input.tsx';
 import Button from '../../components/Button/Button.tsx';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import {useDispatch, useSelector} from "react-redux";
+import type {AppDispatch, RootState} from "../../store/store.ts";
+import {register, userActions} from "../../store/user.slice.ts";
 
 export type RegisterForm = {
 	email: {
@@ -18,36 +19,28 @@ export type RegisterForm = {
 	};
 }
 export function Register() {
-	const [error, setError] = useState<string | null>();
+	const navigate = useNavigate();
+	const dispatch = useDispatch<AppDispatch>();
+	const {jwt, registerErrorMessage }= useSelector((state: RootState) => state.user);
+
+	useEffect(() => {
+		if(jwt) {
+			navigate('/');
+		}
+	}, [jwt, navigate]);
 
 	const submit = async (e: FormEvent) => {
 		e.preventDefault();
-		setError(null);
+		dispatch(userActions.clearRegisterError());
 		const target = e.target as typeof e.target & RegisterForm;
 		const {email, password, name} = target;
 		console.log(email.value, password.value, name.value);
-		await sendRegister(email.value, password.value, name.value);
-	};
-
-	const sendRegister = async (email: string, password: string, name: string) => {
-		try {
-			const {data}= await axios.post(`${PREFIX}/auth/register`, {
-				email,
-				password,
-				name
-			});
-			console.log(data);
-		} catch(e) {
-			if (e instanceof AxiosError) {
-				console.log(e);
-				setError(e.response?.data.error);
-			}
-		}
+		dispatch(register({email: email.value, password: password.value, name: name.value}));
 	};
 
 	return <div className={styles['register']}>
 		<h2 className={styles['title']}>Sign Up</h2>
-		{error && <div className={styles['error']}>{error}</div>}
+		{registerErrorMessage && <div className={styles['error']}>{registerErrorMessage}</div>}
 		<form className={styles['form']} onSubmit={submit}>
 			<div className={styles['row']}>
 				<label htmlFor="email">Your email</label>
