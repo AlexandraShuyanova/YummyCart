@@ -5,7 +5,7 @@ import Button from '../../components/Button/Button.tsx';
 import {Link, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import type {AppDispatch, RootState} from "../../store/store.ts";
-import {register, userActions} from "../../store/user.slice.ts";
+import {login, register, userActions} from "../../store/user.slice.ts";
 
 export type RegisterForm = {
 	email: {
@@ -35,7 +35,15 @@ export function Register() {
 		const target = e.target as typeof e.target & RegisterForm;
 		const {email, password, name} = target;
 		console.log(email.value, password.value, name.value);
-		dispatch(register({email: email.value, password: password.value, name: name.value}));
+		await dispatch(register({
+			email: email.value,
+			password: password.value,
+			name: name.value
+		}));
+		await dispatch(login({
+			email: email.value,
+			password: password.value
+		}));
 	};
 
 	return <div className={styles['register']}>
@@ -48,11 +56,11 @@ export function Register() {
 			</div>
 			<div className={styles['row']}>
 				<label htmlFor="password">Your password</label>
-				<Input id="password" name="password'" type="password" placeholder="Password"/>
+				<Input id="password" name="password" type="password" placeholder="Password"/>
 			</div>
 			<div className={styles['row']}>
 				<label htmlFor="name">Your name</label>
-				<Input id="name" name="name'" type="name" placeholder="Name"/>
+				<Input id="name" name="name" type="name" placeholder="Name"/>
 			</div>
 			<Button appearance="big">Sign Up</Button>
 		</form>
