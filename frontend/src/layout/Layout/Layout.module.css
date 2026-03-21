@@ -100,4 +100,18 @@
     /*padding-right: 50px;*/
 }
 
+.cart-count {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    color: var(--white-color);
+    font-size: 12px;
+    font-weight: 700;
+}
+
 

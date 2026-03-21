@@ -21,42 +21,46 @@ function Menu() {
 	const [products, setProducts] = useState<Product[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [error, setError] = useState<string | undefined>();
-	const size = 6;
+	const SIZE = 6;
 	const [page, setPage] = useState<number>(1);
 	const [totalPages, setTotalPages] = useState<number>(1);
-
-	const loadMenu = async() => {
-		try {
-			setIsLoading(true);
-			//const {data} = await axios.get<Product[]>(`${PREFIX}/products`);
-			const {data} = await axios.get<ProductsPagedResponse>(`${PREFIX}/products-paged/?page=${page - 1}&size=${size}`);
-			setProducts(data.items);
-			setTotalPages(data.totalPages);
-			setIsLoading(false);
-		}
-		catch (e) {
-			console.error(e);
-			if (e instanceof AxiosError) {
-				setError(e.message);
-			}
-			setIsLoading(false);
-			return;
-		}
-	};
+	const [search, setSearch] = useState<string>('');
 
 	useEffect(() => {
+		const loadMenu = async() => {
+			try {
+				setIsLoading(true);
+				const {data} = await axios.get<ProductsPagedResponse>(`${PREFIX}/products-paged/?page=${page - 1}&size=${SIZE}&name=${search}`);
+				setProducts(data.items);
+				setTotalPages(data.totalPages);
+				setIsLoading(false);
+			} catch (e) {
+				console.error(e);
+				if (e instanceof AxiosError) {
+					setError(e.message);
+				}
+				setIsLoading(false);
+				return;
+			}
+		};
 		loadMenu();
-	},[page]);
+	}, [page, search]);
 
 	return (
 		<div className={styles['menu-wrapper']}>
 			<div className={styles['head']}>
 				<Header>Menu</Header>
-				<Search className={styles['search-input']}/>
+				<Search
+					className={styles['search-input']}
+					onSearch={(value) => {
+						setSearch(value);
+						setPage(1);
+					}}
+				/>
 			</div>
 			<div className={styles['cards-container']}>
 				{error && <>{error}</>}
-				{!isLoading && products.map(product => (
+				{!isLoading && products.length > 0 && products.map(product => (
 					<ProductCard
 						key={product.id}
 						id={product.id}
@@ -69,6 +73,9 @@ function Menu() {
 				))}
 				{isLoading &&
 					<p>Loading dishes...</p>
+				}
+				{!isLoading && products.length === 0  &&
+				<p>No dishes found</p>
 				}
 			</div>
 			<div className={styles.paginationWrapper}>

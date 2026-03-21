@@ -74,7 +74,13 @@ const products: Product[] = [
         { id: 15, name: 'Extra Spicy', price: 320, ingredients: ['spicy sauce','mushrooms','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food3.png', rating: 4.9 },
         { id: 16, name: 'Roast with Cheese', price: 290, ingredients: ['potatoes','cheese','pepper','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png', rating: 4.4 },
         { id: 17, name: 'Caesar with Chicken', price: 290, ingredients: ['chicken','cheese','caesar sauce','tomatoes'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food5.png', rating: 4.8 },
-        { id: 18, name: 'Green Salad', price: 290, ingredients: ['cucumber','nuts','pepper'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food6.png', rating: 4.5 }
+        { id: 18, name: 'Green Salad', price: 290, ingredients: ['cucumber','nuts','pepper'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food6.png', rating: 4.5 },
+        { id: 19, name: 'Tacos', price: 280, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
+        { id: 20, name: 'Tacos', price: 280, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
+        { id: 21, name: 'Tacos', price: 280, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
+        { id: 22, name: 'Tacos', price: 280, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
+        { id: 23, name: 'Tacos', price: 280, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
+        { id: 24, name: 'Tacos', price: 280, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
 ];
 const orders: Order[] = [];
 
@@ -162,10 +168,10 @@ app.get('/pizza-api/products-paged', (req: Request, res: Response) => {
 
     let list = [...products];
 
-    // 🔍 Фильтрация по имени
+    // 🔍 Filtering by name and ingredients
     if (name && typeof name === 'string') {
         list = list.filter(p =>
-            p.name.toLowerCase().includes(name.toLowerCase())
+            p.name.toLowerCase().includes(name.toLowerCase()) || p.ingredients.some(item => item.toLowerCase().includes(name.toLowerCase()))
         );
     }
 
