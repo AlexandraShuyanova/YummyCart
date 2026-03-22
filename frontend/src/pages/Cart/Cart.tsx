@@ -1,3 +1,4 @@
+import styles from './Cart.module.css';
 import Header from '../../components/Header/Header.tsx';
 import {useSelector} from 'react-redux';
 import type {RootState} from '../../store/store.ts';
@@ -23,12 +24,12 @@ export function Cart() {
 
 	useEffect(() => {
 		loadAllItems();
-	}, [items, loadAllItems]);
+	}, [items]);
 
 	return (
 		<>
-			<Header>Cart</Header>
-			{items.map((i=> {
+			<Header className={styles['header']}>Cart</Header>
+			{items.length > 0 && items.map((i=> {
 				const product = cartProducts?.find(p => p.id === i.id);
 				if(!product) {
 					return;
@@ -36,6 +37,7 @@ export function Cart() {
 				return <CartItem key={i.id} {...product} count={i.count} />;
 			}
 			))}
+			{items.length === 0 && <div className={styles['empty']}>Your cart is empty</div>}
 		</>
 	);
 };

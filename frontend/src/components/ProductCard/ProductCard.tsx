@@ -12,7 +12,7 @@ function ProductCard(props: ProductCardProps) {
 
 	const add = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
-		dispatch(cartActions.add(props.id));
+		dispatch(cartActions.increase(props.id));
 	};
 
 	return (
