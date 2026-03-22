@@ -28,7 +28,7 @@ export const cartSlice = createSlice({
 				}
 				return i;
 			});
-		}
+		},
 	}
 });
 
