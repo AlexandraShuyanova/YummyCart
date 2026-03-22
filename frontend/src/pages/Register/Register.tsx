@@ -24,6 +24,10 @@ export function Register() {
 	const {jwt, registerErrorMessage }= useSelector((state: RootState) => state.user);
 
 	useEffect(() => {
+		dispatch(userActions.clearRegisterError());
+	}, [dispatch]);
+
+	useEffect(() => {
 		if(jwt) {
 			navigate('/');
 		}
@@ -39,10 +43,6 @@ export function Register() {
 			email: email.value,
 			password: password.value,
 			name: name.value
-		}));
-		await dispatch(login({
-			email: email.value,
-			password: password.value
 		}));
 	};
 

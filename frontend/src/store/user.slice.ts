@@ -82,6 +82,7 @@ export const userSlice = createSlice({
 	reducers: {
 		logout: (state) => {
 			state.jwt = null;
+			state.profile = undefined;
 		},
 		clearLoginError: (state) => {
 			state.loginErrorMessage = undefined;

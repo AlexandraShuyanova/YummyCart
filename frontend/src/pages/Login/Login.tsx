@@ -22,6 +22,10 @@ export function Login() {
 	const {jwt, loginErrorMessage}= useSelector((state: RootState) => state.user);
 
 	useEffect(() => {
+		dispatch(userActions.clearLoginError());
+	}, [dispatch]);
+
+	useEffect(() => {
 		if(jwt) {
 			navigate('/');
 		}
