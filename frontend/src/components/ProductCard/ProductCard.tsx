@@ -3,16 +3,19 @@ import type {ProductCardProps} from './ProductCard.props.ts';
 import cartItemButton from '../../assets/cart-button-icon.svg';
 import ratingStar from '../../assets/rating-star.svg';
 import {Link} from 'react-router-dom';
-import type {AppDispatch} from "../../store/store.ts";
-import {useDispatch} from "react-redux";
-import {cartActions} from "../../store/cart.slice.ts";
+import type {AppDispatch} from '../../store/store.ts';
+import {useDispatch} from 'react-redux';
+import {updateCart} from '../../store/cart.slice.ts';
 
 function ProductCard(props: ProductCardProps) {
 	const dispatch = useDispatch<AppDispatch>();
 
 	const add = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
-		dispatch(cartActions.increase(props.id));
+		dispatch(updateCart({
+			productId: props.id,
+			action: 'increase'
+		}));
 	};
 
 	return (

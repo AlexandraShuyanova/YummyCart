@@ -33,11 +33,18 @@ interface Product {
     rating: number;
 }
 
+interface Cart {
+    userId: number;
+    items: {
+        productId: number;
+        count: number
+    }[];
+}
+
 interface OrderItem {
     id: number;
     count: number;
 }
-
 
 interface Order {
     id: number;
@@ -53,6 +60,7 @@ interface AuthRequest extends Request {
 
 // ===== MOCK DATABASE =====
 const users: User[] = [];
+const carts: Cart[] = [];
 
 const products: Product[] = [
         { id: 1, name: 'Delight', price: 300, ingredients: ['salami','arugula','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png', rating: 4.7 },
@@ -157,6 +165,51 @@ app.get('/pizza-api/products', (req: Request, res: Response) => {
     res.json(list);
 });
 
+app.get('/pizza-api/cart', auth, (req: AuthRequest, res: Response) => {
+    const userId = req.user!.id;
+    const cart = carts.find(c => c.userId === userId);
+    if (!cart) {
+        return res.json({ items: [] });
+    }
+    res.json({ items: cart.items });
+});
+
+app.post('/pizza-api/cart/update', auth, (req: AuthRequest, res: Response) => {
+    const { productId, action } = req.body;
+    const userId = req.user!.id;
+
+    let cart = carts.find(c => c.userId === userId);
+
+    if (!cart) {
+        cart = { userId, items: [] };
+        carts.push(cart);
+    }
+
+    const item = cart.items.find(i => i.productId === productId);
+
+    if (action === 'increase') {
+        if (item) {
+            item.count++;
+        } else {
+            cart.items.push({ productId, count: 1 });
+        }
+    }
+
+    if (action === 'decrease') {
+        if (item && item.count > 1) {
+            item.count--;
+        } else {
+            cart.items = cart.items.filter(i => i.productId !== productId);
+        }
+    }
+
+    if (action === 'remove') {
+        cart.items = cart.items.filter(i => i.productId !== productId);
+    }
+
+    res.json({items: cart.items});
+});
+
 app.get('/pizza-api/products-paged', (req: Request, res: Response) => {
     const {
         page = '1',
@@ -175,7 +228,7 @@ app.get('/pizza-api/products-paged', (req: Request, res: Response) => {
         );
     }
 
-    // 🔃 Сортировка
+    // 🔃 Sorting
     if (sortby && typeof sortby === 'string') {
         list.sort((a: any, b: any) => {
             if (a[sortby] < b[sortby]) return order === 'desc' ? 1 : -1;
@@ -184,7 +237,7 @@ app.get('/pizza-api/products-paged', (req: Request, res: Response) => {
         });
     }
 
-    // 📄 Пагинация
+    // 📄 Pagination
     const pageNum = Number(page);
     const sizeNum = Number(size);
     const start = pageNum * sizeNum;
@@ -201,7 +254,6 @@ app.get('/pizza-api/products-paged', (req: Request, res: Response) => {
     });
 });
 
-
 app.get('/pizza-api/products/:id', (req: Request, res: Response) => {
     const id = Number(req.params.id);
     const product = products.find(p => p.id === id);
@@ -209,7 +261,6 @@ app.get('/pizza-api/products/:id', (req: Request, res: Response) => {
         return res.status(404).json({ error: 'Not found' });
     res.json(product);
 });
-
 
 app.post('/pizza-api/order', auth, (req: AuthRequest, res: Response) => {
     const { products: items } = req.body;

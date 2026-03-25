@@ -2,7 +2,7 @@ import styles from './CartItem.module.css';
 import type {CartItemProps} from './CartItem.props.ts';
 import type {AppDispatch} from '../../store/store.ts';
 import {useDispatch} from 'react-redux';
-import {cartActions} from '../../store/cart.slice.ts';
+import {updateCart} from '../../store/cart.slice.ts';
 import plus from '../../assets/plus.svg';
 import minus from '../../assets/minus.svg';
 import removeIcon from '../../assets/remove.svg';
@@ -12,17 +12,26 @@ function CartItem(props: CartItemProps) {
 
 	const increase = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
-		dispatch(cartActions.increase(props.id));
+		dispatch(updateCart({
+			productId: props.id,
+			action: 'increase'
+		}));
 	};
     
 	const decrease = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
-		dispatch(cartActions.decrease(props.id));
+		dispatch(updateCart({
+			productId: props.id,
+			action: 'decrease'
+		}));
 	};
 
 	const remove = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.preventDefault();
-		dispatch(cartActions.remove(props.id));
+		dispatch(updateCart({
+			productId: props.id,
+			action: 'remove'
+		}));
 	};
 
 	return (

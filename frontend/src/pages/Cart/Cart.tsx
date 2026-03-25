@@ -18,7 +18,7 @@ export function Cart() {
 	};
 
 	const loadAllItems = async() => {
-		const products = await Promise.all(items.map((item) => getItem(item.id)));
+		const products = await Promise.all(items.map((item) => getItem(item.productId)));
 		setCartProducts(products);
 	};
 
@@ -30,11 +30,11 @@ export function Cart() {
 		<>
 			<Header className={styles['header']}>Cart</Header>
 			{items.length > 0 && items.map((i=> {
-				const product = cartProducts?.find(p => p.id === i.id);
+				const product = cartProducts?.find(p => p.id === i.productId);
 				if(!product) {
 					return;
 				}
-				return <CartItem key={i.id} {...product} count={i.count} />;
+				return <CartItem key={i.productId} {...product} count={i.count} />;
 			}
 			))}
 			{items.length === 0 && <div className={styles['empty']}>Your cart is empty</div>}

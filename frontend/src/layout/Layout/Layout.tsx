@@ -10,16 +10,18 @@ import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
 import {getProfile, userActions} from '../../store/user.slice.ts';
 import {useEffect} from 'react';
+import {getCart} from "../../store/cart.slice.ts";
 
 export function Layout() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
-	const profile = useSelector((state: RootState) => state.user.profile);
+	const {jwt, profile} = useSelector((state: RootState) => state.user);
 	const cartItems = useSelector((state: RootState) => state.cart.items);
 
 	useEffect(() => {
 		dispatch(getProfile());
-	}, [dispatch]);
+		dispatch(getCart());
+	}, [jwt]);
 
 	const logout = () => {
 		dispatch(userActions.logout());
