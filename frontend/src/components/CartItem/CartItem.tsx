@@ -6,6 +6,7 @@ import {updateCart} from '../../store/cart.slice.ts';
 import plus from '../../assets/plus.svg';
 import minus from '../../assets/minus.svg';
 import removeIcon from '../../assets/remove.svg';
+import {Link} from 'react-router-dom';
 
 function CartItem(props: CartItemProps) {
 	const dispatch = useDispatch<AppDispatch>();
@@ -36,7 +37,9 @@ function CartItem(props: CartItemProps) {
 
 	return (
 		<div className={styles['item']}>
-			<div className={styles['image']} style={{backgroundImage: `url(${props.image})`}}></div>
+			<Link to={`/product/${props.id}`} className={styles['link']}>
+				<div className={styles['image']} style={{backgroundImage: `url(${props.image})`}}></div>
+			</Link>
 			<div className={styles['description']}>
 				<div className={styles['name']}>{props.name}</div>
 				<div className={styles['price']}>{props.price}&nbsp;₽</div>
