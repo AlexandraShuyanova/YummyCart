@@ -207,6 +207,10 @@ app.post('/pizza-api/cart/update', auth, (req: AuthRequest, res: Response) => {
         cart.items = cart.items.filter(i => i.productId !== productId);
     }
 
+    if (action === 'clear') {
+        cart.items = [];
+    }
+
     res.json({items: cart.items});
 });
 

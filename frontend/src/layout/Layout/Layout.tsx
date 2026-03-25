@@ -10,7 +10,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
 import {getProfile, userActions} from '../../store/user.slice.ts';
 import {useEffect} from 'react';
-import {getCart} from "../../store/cart.slice.ts";
+import {getCart} from '../../store/cart.slice.ts';
 
 export function Layout() {
 	const navigate = useNavigate();

@@ -1,3 +1,49 @@
 .header {
     margin-bottom: 40px;
 }
+
+.row {
+    max-width: 612px;
+    display: flex;
+    justify-content: space-between;
+    padding: 17px 0;
+}
+
+.hr {
+    max-width: 612px;
+    margin: 0;
+    border: 1px solid  #F1F2F3;
+}
+
+.text {
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: normal;
+    font-style: normal;
+}
+
+.price {
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 19px;
+    line-height: normal;
+    font-style: normal;
+}
+
+.total-count {
+    color: #9796A1;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: normal;
+    font-style: normal;
+}
+
+.order-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    max-width: 612px;
+    padding: 14px 40px;
+}

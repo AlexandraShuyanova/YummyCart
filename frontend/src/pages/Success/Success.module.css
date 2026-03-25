@@ -1,0 +1,23 @@
+.success {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 100%;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
