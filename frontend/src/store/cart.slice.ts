@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import type {RootState} from './store.ts';
 import axios from 'axios';
+import {PREFIX} from '../helpers/API.ts';
 
 export interface CartItem {
     productId: number;
@@ -21,7 +22,7 @@ export const getCart = createAsyncThunk<
 	{ state: RootState }>('cart/getCart',
 		async(_, thunkApi) => {
 			const jwt = thunkApi.getState().user.jwt;
-			const { data } = await axios.get<CartState>('/pizza-api/cart', {
+			const { data } = await axios.get<CartState>(`${PREFIX}/cart`, {
 				headers: {
 					Authorization: `Bearer ${jwt}`
 				}
@@ -40,7 +41,7 @@ export const updateCart = createAsyncThunk<
 		const jwt = thunkApi.getState().user.jwt;
 
 		const { data } = await axios.post<CartState>(
-			'/pizza-api/cart/update',
+			`${PREFIX}/cart/update`,
 			{ productId, action },
 			{
 				headers: {
