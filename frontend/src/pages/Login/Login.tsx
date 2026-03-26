@@ -22,10 +22,6 @@ export function Login() {
 	const {jwt, loginErrorMessage}= useSelector((state: RootState) => state.user);
 
 	useEffect(() => {
-		dispatch(userActions.clearLoginError());
-	}, [dispatch]);
-
-	useEffect(() => {
 		if(jwt) {
 			navigate('/');
 		}
@@ -43,14 +39,18 @@ export function Login() {
 	return <div className={styles['login']}>
 		<h2 className={styles['title']}>Log In</h2>
 		{loginErrorMessage && <div className={styles['error']}>{loginErrorMessage}</div>}
-		<form className={styles['form']} onSubmit={submit}>
+		<form className={styles['form']} onSubmit={submit} onChange={() => {
+			if (loginErrorMessage) {
+				dispatch(userActions.clearLoginError());
+			}
+		}}>
 			<div className={styles['row']}>
 				<label htmlFor="email">Your email</label>
-				<Input id="email" name="email" type="text" placeholder="Email"/>
+				<Input required id="email" name="email" type="text" placeholder="Email"/>
 			</div>
 			<div className={styles['row']}>
 				<label htmlFor="password">Your password</label>
-				<Input id="password" name="password" type="password" placeholder="Password"/>
+				<Input required id="password" name="password" type="password" placeholder="Password"/>
 			</div>
 			<Button appearance="big">Log In</Button>
 		</form>

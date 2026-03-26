@@ -24,10 +24,6 @@ export function Register() {
 	const {jwt, registerErrorMessage }= useSelector((state: RootState) => state.user);
 
 	useEffect(() => {
-		dispatch(userActions.clearRegisterError());
-	}, [dispatch]);
-
-	useEffect(() => {
 		if(jwt) {
 			navigate('/');
 		}
@@ -49,18 +45,22 @@ export function Register() {
 	return <div className={styles['register']}>
 		<h2 className={styles['title']}>Sign Up</h2>
 		{registerErrorMessage && <div className={styles['error']}>{registerErrorMessage}</div>}
-		<form className={styles['form']} onSubmit={submit}>
+		<form className={styles['form']} onSubmit={submit} onChange={() => {
+			if (registerErrorMessage) {
+				dispatch(userActions.clearRegisterError());
+			}
+		}}>
 			<div className={styles['row']}>
 				<label htmlFor="email">Your email</label>
-				<Input id="email" name="email" type="text" placeholder="Email"/>
+				<Input required id="email" name="email" type="text" placeholder="Email"/>
 			</div>
 			<div className={styles['row']}>
 				<label htmlFor="password">Your password</label>
-				<Input id="password" name="password" type="password" placeholder="Password"/>
+				<Input required id="password" name="password" type="password" placeholder="Password"/>
 			</div>
 			<div className={styles['row']}>
 				<label htmlFor="name">Your name</label>
-				<Input id="name" name="name" type="name" placeholder="Name"/>
+				<Input required id="name" name="name" type="name" placeholder="Name"/>
 			</div>
 			<Button appearance="big">Sign Up</Button>
 		</form>

@@ -124,6 +124,9 @@ app.post('/pizza-api/auth/register', async (req: Request, res: Response) => {
     const { email, name, password } = req.body;
     if (users.find(u => u.email === email)) return res.status(400).json({ error: 'User already exists' });
 
+    if (!email || !password || !name) {
+        return res.status(400).json({ error: 'All fields are required' });
+    }
 
     const hashed = await bcrypt.hash(password, 10);
     const newUser: User = { id: users.length + 1, email, name, password: hashed };
@@ -143,6 +146,9 @@ app.post('/pizza-api/auth/login', async (req: Request, res: Response) => {
     const passOk = await bcrypt.compare(password, user.password);
     if (!passOk) return res.status(400).json({ error: 'Invalid password' });
 
+    if (!email || !password) {
+        return res.status(400).json({ error: 'All fields are required' });
+    }
 
     const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET);
     res.json({ token });

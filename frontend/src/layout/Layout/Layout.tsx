@@ -19,6 +19,8 @@ export function Layout() {
 	const cartItems = useSelector((state: RootState) => state.cart.items);
 
 	useEffect(() => {
+		if (!jwt)
+			return;
 		dispatch(getProfile());
 		dispatch(getCart());
 	}, [jwt]);
