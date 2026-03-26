@@ -16,7 +16,7 @@ Backend API: https://yummycart-production.up.railway.app/pizza-api/
 ## 🎥 Demo
 
 ### Authentication
-https://github.com/user-attachments/assets/557568e0-44e0-4415-a3c9-c446b593ac45
+https://github.com/user-attachments/assets/98a9b533-ae58-441b-8991-57440dc97085
 
 ### Cart & Order Flow
 (Add video)
