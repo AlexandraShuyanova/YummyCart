@@ -72,7 +72,7 @@ const router = createBrowserRouter(
 		}
 	],
 	{
-		basename: import.meta.env.DEV ? '/' : '/YummyCart/'
+		basename: '/'
 	}
 );
 
