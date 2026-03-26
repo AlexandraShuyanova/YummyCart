@@ -128,8 +128,8 @@ app.post('/pizza-api/auth/register', async (req: Request, res: Response) => {
     const newUser: User = { id: users.length + 1, email, name, password: hashed };
     users.push(newUser);
 
-
-    res.json({ message: 'User registered', user: { id: newUser.id, email, name } });
+    const token = jwt.sign({ id: newUser.id, email: newUser.email }, JWT_SECRET);
+    res.json({ token });
 });
 
 

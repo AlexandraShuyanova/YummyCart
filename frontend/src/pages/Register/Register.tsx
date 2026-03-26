@@ -5,7 +5,7 @@ import Button from '../../components/Button/Button.tsx';
 import {Link, useNavigate} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
-import {login, register, userActions} from '../../store/user.slice.ts';
+import {register, userActions} from '../../store/user.slice.ts';
 
 export type RegisterForm = {
 	email: {
@@ -43,10 +43,6 @@ export function Register() {
 			email: email.value,
 			password: password.value,
 			name: name.value
-		}));
-		await  dispatch(login({
-			email: email.value,
-			password: password.value
 		}));
 	};
 
