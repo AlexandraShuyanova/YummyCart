@@ -29,7 +29,7 @@ function ProductCard(props: ProductCardProps) {
 				}}>
 					<div className={styles['price']}>
 						{props.price}&nbsp;
-						<span className={styles['currency']}>₽</span>
+						<span className={styles['currency']}>€</span>
 					</div>
 					<button className={styles['add-to-cart-button']} onClick={add}>
 						<img src={cartItemButton} alt='Add to cart'></img>

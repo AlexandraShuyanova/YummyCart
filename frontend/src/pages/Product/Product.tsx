@@ -40,7 +40,7 @@ export function Product() {
 				<div className={styles['description']}>
 					<div className={styles['row']}>
 						<label htmlFor="email">Price</label>
-						<span className={styles['price']}>{product.price}&nbsp;₽</span>
+						<span className={styles['price']}>{product.price}&nbsp;€</span>
 					</div>
 					<hr className={styles['hr']}/>
 					<div className={styles['row']}>

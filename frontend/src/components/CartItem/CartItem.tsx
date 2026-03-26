@@ -42,7 +42,7 @@ function CartItem(props: CartItemProps) {
 			</Link>
 			<div className={styles['description']}>
 				<div className={styles['name']}>{props.name}</div>
-				<div className={styles['price']}>{props.price}&nbsp;₽</div>
+				<div className={styles['price']}>{props.price}&nbsp;€</div>
 			</div>
 			<div className={styles['actions']}>
 				<button className={styles['minus']} onClick={decrease}>

@@ -11,7 +11,7 @@ import Button from '../../components/Button/Button.tsx';
 import {useNavigate} from "react-router-dom";
 import {updateCart} from "../../store/cart.slice.ts";
 
-const DELIVERY_FEE = 150;
+const DELIVERY_FEE = 5;
 
 export function Cart() {
 	const [cartProducts, setCartProducts] = useState<Product[]>();
@@ -75,19 +75,19 @@ export function Cart() {
 				<div>
 					<div className={styles['row']}>
 						<div className={styles['text']}>Total</div>
-						<div className={styles['price']}>{total}&nbsp;<span>₽</span></div>
+						<div className={styles['price']}>{total}&nbsp;<span>€</span></div>
 					</div>
 					<hr className={styles['hr']}/>
 					<div className={styles['row']}>
 						<div className={styles['text']}>Delivery</div>
-						<div className={styles['price']}>{DELIVERY_FEE}&nbsp;<span>₽</span></div>
+						<div className={styles['price']}>{DELIVERY_FEE}&nbsp;<span>€</span></div>
 					</div>
 					<hr className={styles['hr']}/>
 					<div className={styles['row']}>
 						<div className={styles['text']}>Total <span
 							className={styles['total-count']}>({items.reduce((acc, item) => acc += item.count, 0)})</span>
 						</div>
-						<div className={styles['price']}>{total && total + DELIVERY_FEE}&nbsp;<span>₽</span></div>
+						<div className={styles['price']}>{total && total + DELIVERY_FEE}&nbsp;<span>€</span></div>
 					</div>
 					<div className={styles['order-btn']}>
 						<Button appearance={'big'} disabled={items.length === 0} onClick={checkout}>Place order</Button>
