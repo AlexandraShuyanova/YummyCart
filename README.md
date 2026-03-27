@@ -32,7 +32,7 @@ The project focuses on scalable frontend architecture, predictable state managem
 <img width="800" src="https://github.com/user-attachments/assets/a0d66a80-2b49-41a9-a612-9016729b48f1"/> 
 </p>
 
-### ✅ Order Success
+### Order Success
 
 <p align="center">
 <img width="800" src="https://github.com/user-attachments/assets/557f400a-697c-4565-a5bd-d68be5556266"/> 
@@ -65,5 +65,11 @@ Add/remove items, update quantity and calculate total price.
 Cart is synchronized with backend per user.
 
 ![Cart](https://github.com/user-attachments/assets/7c649e62-3b2b-46ed-88e9-5792b2ea70d8)
+
+### ✅ Order Flow
+
+Order placement and success screen.
+
+![Order](https://github.com/user-attachments/assets/be3d122b-e3df-4c01-b597-4239edf460ab)
 
 ---
