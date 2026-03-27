@@ -69,6 +69,7 @@ function Menu() {
 						rating={product.rating}
 						price={product.price}
 						image={product.image}
+						search={search}
 					/>
 				))}
 				{isLoading &&

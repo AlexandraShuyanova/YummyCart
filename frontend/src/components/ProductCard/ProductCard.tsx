@@ -18,6 +18,19 @@ function ProductCard(props: ProductCardProps) {
 		}));
 	};
 
+	function highlight(text: string, query: string) {
+		if (!query) return text;
+
+		const regex = new RegExp(`(${query})`, 'gi');
+		const parts = text.split(regex);
+
+		return parts.map((part, i) =>
+			part.toLowerCase() === query.toLowerCase()
+				? <span key={i} style={{ backgroundColor: '#ffe58f' }}>{part}</span>
+				: part
+		);
+	}
+
 	return (
 		<Link to={`/product/${props.id}`} className={styles['link']}>
 			<div key={props.id} className={styles['product-card']}>
@@ -40,8 +53,8 @@ function ProductCard(props: ProductCardProps) {
 					</div>
 				</div>
 				<div className={styles['footer']}>
-					<h2 className={styles['name']}>{props.name}</h2>
-					<p className={styles['description']}>{props.description}</p>
+					<h2 className={styles['name']}>{highlight(props.name, props.search || '')}</h2>
+					<p className={styles['description']}>{highlight(props.description, props.search || '')}</p>
 				</div>
 			</div>
 		</Link>
