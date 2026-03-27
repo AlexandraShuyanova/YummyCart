@@ -165,9 +165,8 @@ Global state is managed with Redux Toolkit and split into two slices:
 
 ## 🐳 Docker
 
-```bash
 docker-compose up --build
-```bash
+
 
 ## 📌 Future Improvements
 
