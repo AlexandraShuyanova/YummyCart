@@ -9,14 +9,14 @@ The project focuses on scalable frontend architecture, predictable state managem
 ## 📸 Screenshots
 
 ### Menu
-
-<img width="600" src="https://github.com/user-attachments/assets/4af45b20-9e5c-4a67-9510-72dc61b93dbd"/> 
-
+<p align="center">
+  <img width="600" src="https://github.com/user-attachments/assets/4af45b20-9e5c-4a67-9510-72dc61b93dbd" />
+</p>
 
 ### Search & Highlight
-
+<p align="center">
 <img width="600" src="https://github.com/user-attachments/assets/bf96c160-bbc1-465e-bb28-7936cc3e77e1"/> 
-
+</p>
 ### Product
 
 <img width="1134" height="915" alt="Product" src="https://github.com/user-attachments/assets/3dbfe10b-1304-446a-85ef-12a4d5f67d85" />
