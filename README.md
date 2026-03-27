@@ -43,14 +43,21 @@ Backend API: https://yummycart-production.up.railway.app/pizza-api/
 
 ### 🔐 Authentication
 
-JWT is stored in localStorage and used for protected API requests
+JWT is stored in localStorage and used for protected API requests.
 
 ![auth](https://github.com/user-attachments/assets/3fac10ff-2090-45d7-a3af-88da108bcfbf)
 
 ### 🍕 Menu & Search
 
-Search, filtering and pagination
+Search, filtering and pagination.
 
 ![Menu](https://github.com/user-attachments/assets/26eec124-9041-4518-bfba-0520e72ac80e)
+
+### 🛒 Cart Management
+
+Add/remove items, update quantity and calculate total price.
+Cart is synchronized with backend per user.
+
+![Cart](https://github.com/user-attachments/assets/7c649e62-3b2b-46ed-88e9-5792b2ea70d8)
 
 ---
