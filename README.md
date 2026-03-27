@@ -73,3 +73,10 @@ Order placement and success screen.
 ![Order](https://github.com/user-attachments/assets/be3d122b-e3df-4c01-b597-4239edf460ab)
 
 ---
+
+### 📌 Future Improvements
+
+-Add persistent database (PostgreSQL / MongoDB)
+-Improve validation (frontend + backend)
+-Add debounce for search
+-Add loading skeletons
