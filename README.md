@@ -18,6 +18,7 @@ Backend API: https://yummycart-production.up.railway.app/pizza-api/
 - React + TypeScript
 - Redux Toolkit (global state)
 - React Router (createBrowserRouter)
+- Vite (build tool)
 - Axios (API requests)
 - Node.js + Express
 - JWT authentication
