@@ -11,25 +11,25 @@ The project focuses on scalable frontend architecture, predictable state managem
 ### Menu
 
 <p align="center">
-  <img width="600" src="https://github.com/user-attachments/assets/4af45b20-9e5c-4a67-9510-72dc61b93dbd" />
+  <img width="800" src="https://github.com/user-attachments/assets/4af45b20-9e5c-4a67-9510-72dc61b93dbd" />
 </p>
 
 ### Search & Highlight
 
 <p align="center">
-<img width="600" src="https://github.com/user-attachments/assets/bf96c160-bbc1-465e-bb28-7936cc3e77e1"/> 
+<img width="800" src="https://github.com/user-attachments/assets/bf96c160-bbc1-465e-bb28-7936cc3e77e1"/> 
 </p>
 
 ### Product
 
 <p align="center">
-<img width="600" src="https://github.com/user-attachments/assets/3dbfe10b-1304-446a-85ef-12a4d5f67d85"/> 
+<img width="800" src="https://github.com/user-attachments/assets/3dbfe10b-1304-446a-85ef-12a4d5f67d85"/> 
 </p>
 
 ### Cart
 
 <p align="center">
-<img width="600" src="https://github.com/user-attachments/assets/a0d66a80-2b49-41a9-a612-9016729b48f1"/> 
+<img width="800" src="https://github.com/user-attachments/assets/a0d66a80-2b49-41a9-a612-9016729b48f1"/> 
 </p>
 
 ## 🌐 Live Demo
