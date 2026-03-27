@@ -11,35 +11,70 @@ The project focuses on scalable frontend architecture, predictable state managem
 Frontend: https://yummy-cart-eta.vercel.app  
 Backend API: https://yummycart-production.up.railway.app/pizza-api/
 
-Below are screenshots and short GIF previews of key features of the app 👇
+---
+
+## 🚀 Tech Stack
+
+- React + TypeScript
+- Redux Toolkit (global state)
+- React Router (createBrowserRouter)
+- Axios (API requests)
+- Node.js + Express
+- JWT authentication
+- Docker
+
+---
+
+## ✨ Features
+
+- 🔐 Authentication (JWT)
+- 🔍 Search with highlight (name & ingredients)
+- 📄 Product page
+- 🛒 Cart with full CRUD (add / remove / update)
+- 🔄 Cart sync per user (server-side)
+- 📦 Order flow with success screen
+- 🧹 Cart is cleared after order
+- 📄 Pagination
+
+---
 
 ## 📸 Screenshots
 
-### Menu
+### 🍕 Menu
 
 <p align="center">
   <img width="800" src="https://github.com/user-attachments/assets/4af45b20-9e5c-4a67-9510-72dc61b93dbd" />
 </p>
 
-### Search & Highlight
+---
+
+### 🔍 Search & Highlight
+
+Highlights matched text in product names and ingredients.
 
 <p align="center">
 <img width="800" src="https://github.com/user-attachments/assets/bf96c160-bbc1-465e-bb28-7936cc3e77e1"/> 
 </p>
 
-### Product
+---
+
+### 📄 Product
 
 <p align="center">
 <img width="800" src="https://github.com/user-attachments/assets/3dbfe10b-1304-446a-85ef-12a4d5f67d85"/> 
 </p>
 
-### Cart
+---
+
+### 🛒 Cart
 
 <p align="center">
 <img width="800" src="https://github.com/user-attachments/assets/a0d66a80-2b49-41a9-a612-9016729b48f1"/> 
 </p>
 
-### Order Success
+---
+
+### ✅ Order Success
 
 <p align="center">
 <img width="800" src="https://github.com/user-attachments/assets/557f400a-697c-4565-a5bd-d68be5556266"/> 
@@ -76,9 +111,65 @@ Order placement and success screen.
 
 ---
 
-### 📌 Future Improvements
+## 🧠 State Management (Redux)
 
--Add persistent database (PostgreSQL / MongoDB)
--Improve validation (frontend + backend)
--Add debounce for search
--Add loading skeletons
+Global state is managed with Redux Toolkit and split into two slices:
+
+### 👤 user slice
+- JWT token (authentication state)
+- user profile (fetched from backend)
+- login / register error handling
+
+### 🛒 cart slice
+- cart items (server-synchronized)
+- async updates via API (add / remove / update / clear)
+- cart is persisted per user on backend
+
+---
+
+## 🔄 Data Flow
+
+1. User triggers action (e.g. add to cart)
+2. Redux async thunk sends request to API
+3. Backend updates cart linked to userId
+4. Updated data is returned and stored in Redux
+5. UI re-renders based on new state
+
+---
+
+## 🔐 Authentication
+
+- JWT-based authentication
+- Token is stored in Redux and persisted in localStorage
+- Used in Authorization header for protected requests
+
+---
+
+## ⚙️ Backend
+
+- REST API built with Express.js
+- JWT middleware for protected routes
+- bcrypt for password hashing
+- In-memory storage (mock database)
+
+---
+
+## ⚠️ Notes
+
+- Data is stored in-memory (no persistent database)
+- Data resets on server restart (free tier limitation)
+- Can be extended with PostgreSQL or MongoDB
+
+---
+
+## 🐳 Docker
+
+```bash
+docker-compose up --build
+
+## 📌 Future Improvements
+
+- Add persistent database (PostgreSQL / MongoDB)
+- Improve validation (frontend + backend)
+- Add debounce for search
+- Add loading skeletons
