@@ -26,6 +26,12 @@ The project focuses on scalable frontend architecture, predictable state managem
 <img width="600" src="https://github.com/user-attachments/assets/3dbfe10b-1304-446a-85ef-12a4d5f67d85"/> 
 </p>
 
+### Cart
+
+<p align="center">
+<img width="600" src="https://github.com/user-attachments/assets/a0d66a80-2b49-41a9-a612-9016729b48f1"/> 
+</p>
+
 ## 🌐 Live Demo
 
 Frontend: https://yummy-cart-eta.vercel.app  
