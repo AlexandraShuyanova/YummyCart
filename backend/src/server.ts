@@ -70,12 +70,12 @@ const products: Product[] = [
         { id: 5, name: 'Caesar with Chicken', price: 16, ingredients: ['chicken','cheese','caesar sauce','tomatoes'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food5.png', rating: 4.8 },
         { id: 6, name: 'Green Salad', price: 16, ingredients: ['cucumber','nuts','pepper'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food6.png', rating: 4.5 },
 
-        { id: 7, name: 'Delight', price: 18, ingredients: ['salami','arugula','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png', rating: 4.7 },
-        { id: 8, name: 'Tacos', price: 17, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
-        { id: 9, name: 'Extra Spicy', price: 16, ingredients: ['spicy sauce','mushrooms','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food3.png', rating: 4.9 },
-        { id: 10, name: 'Roast with Cheese', price: 16, ingredients: ['potatoes','cheese','pepper','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png', rating: 4.4 },
-        { id: 11, name: 'Caesar with Chicken', price: 16, ingredients: ['chicken','cheese','caesar sauce','tomatoes'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food5.png', rating: 4.8 },
-        { id: 12, name: 'Green Salad', price: 16, ingredients: ['cucumber','nuts','pepper'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food6.png', rating: 4.5 },
+        { id: 7, name: 'Green Salad', price: 16, ingredients: ['cucumber','nuts','pepper'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food6.png', rating: 4.5 },
+        { id: 8, name: 'Caesar with Chicken', price: 16, ingredients: ['chicken','cheese','caesar sauce','tomatoes'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food5.png', rating: 4.8 },
+        { id: 9, name: 'Roast with Cheese', price: 16, ingredients: ['potatoes','cheese','pepper','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png', rating: 4.4 },
+        { id: 10, name: 'Extra Spicy', price: 16, ingredients: ['spicy sauce','mushrooms','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food3.png', rating: 4.9 },
+        { id: 11, name: 'Delight', price: 18, ingredients: ['salami','arugula','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png', rating: 4.7 },
+        { id: 12, name: 'Tacos', price: 17, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
 
         { id: 13, name: 'Delight', price: 18, ingredients: ['salami','arugula','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png', rating: 4.7 },
         { id: 14, name: 'Tacos', price: 17, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
