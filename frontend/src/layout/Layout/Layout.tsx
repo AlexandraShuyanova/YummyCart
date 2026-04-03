@@ -9,7 +9,7 @@ import exitBtn from '../../assets/exitBtn.svg';
 import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
 import {getProfile, userActions} from '../../store/user.slice.ts';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {getCart} from '../../store/cart.slice.ts';
 
 export function Layout() {
@@ -17,6 +17,7 @@ export function Layout() {
 	const dispatch = useDispatch<AppDispatch>();
 	const {jwt, profile} = useSelector((state: RootState) => state.user);
 	const cartItems = useSelector((state: RootState) => state.cart.items);
+	const [menuOpen, setMenuOpen] = useState(false);
 
 	useEffect(() => {
 		if (!jwt)
@@ -49,15 +50,65 @@ export function Layout() {
 						[styles['active']]: isActive
 					})}>
 						<img src={cart} alt="Cart icon"/>Cart
-						<span className={styles['cart-count']}>{cartItems.reduce((acc, item) => acc +=  item.count, 0)}</span>
+						<span
+							className={styles['cart-count']}>{cartItems.reduce((acc, item) => acc += item.count, 0)}</span>
 					</NavLink>
 				</div>
 				<Button className={styles['exit']} appearance="small" onClick={logout}>
 					<img src={exitBtn}></img>
-					Exit
+						Exit
 				</Button>
 			</div>
+			{menuOpen && (
+				<>
+					<div
+						className={styles.overlay}
+						onClick={() => setMenuOpen(false)}
+					/>
+					<div className={cn(styles['mobile-sidebar'], {
+						[styles.open]: menuOpen
+					})}>
+						<div className={styles['mobile-sidebar-content']}>
+							<div className={styles['top']}>
+								<div className={styles['user']}>
+									<img className={styles['avatar']} src={avatar} alt="User's avatar"></img>
+									<div className={styles['name']}>{profile?.name}</div>
+									<div className={styles['email']}>{profile?.email}</div>
+								</div>
+								<button
+									className={styles.close}
+									onClick={() => setMenuOpen(false)}
+								>
+									✕
+								</button>
+							</div>
+							<div className={styles['menu']}>
+								<NavLink to='/' className={({isActive}) => cn(styles['link'], {
+									[styles['active']]: isActive
+								})}>
+									<img src={menu} alt="Menu icon"/>
+									<span>Menu</span>
+								</NavLink>
+								<NavLink to='/cart' className={({isActive}) => cn(styles['link'], {
+									[styles['active']]: isActive
+								})}>
+									<img src={cart} alt="Cart icon"/>Cart
+									<span
+										className={styles['cart-count']}>{cartItems.reduce((acc, item) => acc += item.count, 0)}</span>
+								</NavLink>
+							</div>
+							<Button className={styles['exit']} appearance="small" onClick={logout}>
+								<img src={exitBtn}></img>
+								Exit
+							</Button>
+						</div>
+					</div>
+				</>
+			)}
 			<div className={styles['content']}>
+				<div className={styles['mobile-header']}>
+					<button onClick={() => setMenuOpen(true)}>☰</button>
+				</div>
 				<Outlet/>
 			</div>
 		</div>
