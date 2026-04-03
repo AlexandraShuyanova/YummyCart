@@ -1,24 +1,46 @@
 .register {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
+    max-width: 380px;
+    margin: 0 auto;
+    padding: 0 16px;
 }
+
 .form {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    align-items: center;
+    width: 100%;
+    align-items: stretch;
 }
+
+.form Button {
+    align-self: center;
+}
+
+.title {
+    margin-top: 0;
+}
+
 .row {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    width: 100%;
 }
+
+.row  Input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .row label {
     color: #9796A1;
     font-size: 17px;
     font-weight: 400;
 }
+
 .links {
     display: flex;
     color: var(--text-secondary-color);
@@ -31,8 +53,28 @@
     color: var(--primary-color);
     text-decoration: none;
 }
+
 .error {
     color: white;
     background: #FFC529;
     padding: 20px;
+}
+
+.mobile-logo {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .title {
+        align-self: center;
+    }
+    .mobile-logo {
+        width: 80px;
+        height: auto;
+        margin: 0 auto 10px;
+        display: block;
+    }
+    .register {
+        margin-top: 40px;
+    }
 }

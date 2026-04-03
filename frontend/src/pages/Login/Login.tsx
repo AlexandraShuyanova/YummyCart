@@ -6,6 +6,7 @@ import {type FormEvent, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
 import {login, userActions} from '../../store/user.slice.ts';
+import logo from '../../assets/auth-logo.svg';
 
 export type LoginForm = {
 	email: {
@@ -36,27 +37,30 @@ export function Login() {
 		dispatch(login({email: email.value, password: password.value}));
 	};
 
-	return <div className={styles['login']}>
-		<h2 className={styles['title']}>Log In</h2>
-		{loginErrorMessage && <div className={styles['error']}>{loginErrorMessage}</div>}
-		<form className={styles['form']} onSubmit={submit} onChange={() => {
-			if (loginErrorMessage) {
-				dispatch(userActions.clearLoginError());
-			}
-		}}>
-			<div className={styles['row']}>
-				<label htmlFor="email">Your email</label>
-				<Input required id="email" name="email" type="text" placeholder="Email"/>
+	return (
+		<div className={styles['login']}>
+			<img src={logo} className={styles['mobile-logo']} alt="Logo"/>
+			<h2 className={styles['title']}>Log In</h2>
+			{loginErrorMessage && <div className={styles['error']}>{loginErrorMessage}</div>}
+			<form className={styles['form']} onSubmit={submit} onChange={() => {
+				if (loginErrorMessage) {
+					dispatch(userActions.clearLoginError());
+				}
+			}}>
+				<div className={styles['row']}>
+					<label htmlFor="email">Your email</label>
+					<Input required id="email" name="email" type="text" placeholder="Email"/>
+				</div>
+				<div className={styles['row']}>
+					<label htmlFor="password">Your password</label>
+					<Input required id="password" name="password" type="password" placeholder="Password"/>
+				</div>
+				<Button appearance="big">Log In</Button>
+			</form>
+			<div className={styles['links']}>
+				<div>Don't have an account?</div>
+				<Link to={'/auth/register'}>Sign Up</Link>
 			</div>
-			<div className={styles['row']}>
-				<label htmlFor="password">Your password</label>
-				<Input required id="password" name="password" type="password" placeholder="Password"/>
-			</div>
-			<Button appearance="big">Log In</Button>
-		</form>
-		<div className={styles['links']}>
-			<div>Don't have an account?</div>
-			<Link to={'/auth/register'}>Sign Up</Link>
 		</div>
-	</div>;
+	);
 };

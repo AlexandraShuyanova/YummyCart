@@ -1,6 +1,5 @@
 .layout {
     display: flex;
-    max-width: 1800px;
     width: 100%;
     min-height: 100vh;
 }
@@ -8,14 +7,14 @@
 .logo {
     display: flex;
     flex: 1;
-    flex-direction: column;
-    box-sizing: border-box;
     align-items: center;
     justify-content: center;
 }
 
 .logo img {
     max-width: 450px;
+    width: 100%;
+    height: auto;
 }
 
 .content {
@@ -24,4 +23,24 @@
     border-left: 1px solid var(--separator-color);
     align-items: center;
     justify-content: center;
+    padding: 20px;
+}
+
+.content > * {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .content {
+        border-left: none;
+        align-items: flex-start;
+    }
 }
