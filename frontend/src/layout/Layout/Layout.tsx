@@ -1,22 +1,16 @@
-import {NavLink, Outlet, useNavigate} from 'react-router-dom';
+import {Outlet} from 'react-router-dom';
 import styles from './Layout.module.css';
-import Button from '../../components/Button/Button.tsx';
 import cn from 'classnames';
-import avatar from '../../assets/avatar.png';
-import menu from '../../assets/menu.svg';
-import cart from '../../assets/cart.svg';
-import exitBtn from '../../assets/exitBtn.svg';
 import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
-import {getProfile, userActions} from '../../store/user.slice.ts';
+import {getProfile} from '../../store/user.slice.ts';
 import {useEffect, useState} from 'react';
 import {getCart} from '../../store/cart.slice.ts';
+import SideBar from '../../components/SideBar/SideBar.tsx';
 
 export function Layout() {
-	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
-	const {jwt, profile} = useSelector((state: RootState) => state.user);
-	const cartItems = useSelector((state: RootState) => state.cart.items);
+	const jwt = useSelector((state: RootState) => state.user.jwt);
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	useEffect(() => {
@@ -26,39 +20,9 @@ export function Layout() {
 		dispatch(getCart());
 	}, [jwt]);
 
-	const logout = () => {
-		dispatch(userActions.logout());
-		navigate('/auth/login');
-	};
-
 	return (
 		<div className={styles['layout']}>
-			<div className={styles['sidebar']}>
-				<div className={styles['user']}>
-					<img className={styles['avatar']} src={avatar} alt="User's avatar"></img>
-					<div className={styles['name']}>{profile?.name}</div>
-					<div className={styles['email']}>{profile?.email}</div>
-				</div>
-				<div className={styles['menu']}>
-					<NavLink to='/' className={({isActive}) => cn(styles['link'], {
-						[styles['active']]: isActive
-					})}>
-						<img src={menu} alt="Menu icon"/>
-						<span>Menu</span>
-					</NavLink>
-					<NavLink to='/cart' className={({isActive}) => cn(styles['link'], {
-						[styles['active']]: isActive
-					})}>
-						<img src={cart} alt="Cart icon"/>Cart
-						<span
-							className={styles['cart-count']}>{cartItems.reduce((acc, item) => acc += item.count, 0)}</span>
-					</NavLink>
-				</div>
-				<Button className={styles['exit']} appearance="small" onClick={logout}>
-					<img src={exitBtn}></img>
-						Exit
-				</Button>
-			</div>
+			<SideBar/>
 			{menuOpen && (
 				<>
 					<div
@@ -68,46 +32,13 @@ export function Layout() {
 					<div className={cn(styles['mobile-sidebar'], {
 						[styles.open]: menuOpen
 					})}>
-						<div className={styles['mobile-sidebar-content']}>
-							<div className={styles['top']}>
-								<div className={styles['user']}>
-									<img className={styles['avatar']} src={avatar} alt="User's avatar"></img>
-									<div className={styles['name']}>{profile?.name}</div>
-									<div className={styles['email']}>{profile?.email}</div>
-								</div>
-								<button
-									className={styles.close}
-									onClick={() => setMenuOpen(false)}
-								>
-									✕
-								</button>
-							</div>
-							<div className={styles['menu']}>
-								<NavLink to='/' className={({isActive}) => cn(styles['link'], {
-									[styles['active']]: isActive
-								})}>
-									<img src={menu} alt="Menu icon"/>
-									<span>Menu</span>
-								</NavLink>
-								<NavLink to='/cart' className={({isActive}) => cn(styles['link'], {
-									[styles['active']]: isActive
-								})}>
-									<img src={cart} alt="Cart icon"/>Cart
-									<span
-										className={styles['cart-count']}>{cartItems.reduce((acc, item) => acc += item.count, 0)}</span>
-								</NavLink>
-							</div>
-							<Button className={styles['exit']} appearance="small" onClick={logout}>
-								<img src={exitBtn}></img>
-								Exit
-							</Button>
-						</div>
+						<SideBar onMenuOpen={setMenuOpen} isMobile={true}/>
 					</div>
 				</>
 			)}
 			<div className={styles['content']}>
 				<div className={styles['mobile-header']}>
-					<button onClick={() => setMenuOpen(true)}>☰</button>
+					<button className={styles['sidebar-button']} onClick={() => setMenuOpen(true)}>☰</button>
 				</div>
 				<Outlet/>
 			</div>
