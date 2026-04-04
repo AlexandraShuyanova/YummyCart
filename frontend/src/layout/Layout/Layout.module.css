@@ -17,16 +17,6 @@
     top: 0;
 }
 
-.mobile-sidebar-content {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    padding: 20px 16px;
-    box-sizing: border-box;
-    position: relative;
-    top: 0;
-}
-
 @media (max-width: 1394px) {
     .layout {
         max-width: 1000px;
@@ -140,18 +130,23 @@
     .mobile-header button {
         position: absolute;
         left: 16px;
-        font-size: 20px;
+        font-size: 24px;
         background: none;
         border: none;
+    }
+    .exit img {
+        width: 20px;
+        height: 20px;
     }
 }
 
 .mobile-sidebar {
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
     width: 240px;
-    height: 100vh;
+    height: 100dvh;
     background: white;
     z-index: 1000;
 
@@ -164,6 +159,16 @@
 .mobile-sidebar.open {
     left: 0;
     transform: translateX(0);
+}
+
+.mobile-sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
 }
 
 .overlay {
@@ -186,7 +191,7 @@
 
     background: none;
     border: none;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 
