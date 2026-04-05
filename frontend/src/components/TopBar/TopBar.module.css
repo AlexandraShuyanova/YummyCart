@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     position: sticky;
+    align-items: center;
 }
 
 .top-bar-menu-button {
@@ -16,5 +17,8 @@
 @media (max-width: 768px) {
     .top-bar-menu-button {
         display: block;
+    }
+    .title {
+        display: none;
     }
 }

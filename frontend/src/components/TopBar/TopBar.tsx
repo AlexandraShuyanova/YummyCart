@@ -10,7 +10,7 @@ function TopBar({onOpenMenu, title}:TopBarProps) {
 	return (
 		<div className={styles['top-bar']}>
 			<button className={styles['top-bar-menu-button']} onClick={onOpenMenu}>☰</button>
-			<Header>{title}</Header>
+			<Header className={styles['title']}>{title}</Header>
 		</div>
 	);
 }

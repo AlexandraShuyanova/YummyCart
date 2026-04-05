@@ -3,10 +3,11 @@
     flex-direction: column;
     height: 100%;
 }
-.head {
+.header {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    flex-shrink: 0;
+    align-items: center;
 }
 
 .cards-container {
@@ -26,6 +27,10 @@
     /*padding-bottom: 80px;*/
     /*padding: 60px 0;*/
     /*padding-bottom: 40px;*/
+}
+
+@media (max-width: 768px) {
+
 }
 
 @media (min-width: 1017px) and (max-width: 1394px) {

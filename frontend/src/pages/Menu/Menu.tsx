@@ -50,7 +50,7 @@ function Menu() {
 
 	return (
 		<div className={styles['menu-wrapper']}>
-			<div className={styles['head']}>
+			<div className={styles['header']}>
 				<TopBar title={'Menu'} onOpenMenu={onOpenMenu}/>
 				<Search
 					className={styles['search-input']}
