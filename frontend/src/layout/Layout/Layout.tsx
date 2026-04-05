@@ -37,10 +37,7 @@ export function Layout() {
 				</>
 			)}
 			<div className={styles['content']}>
-				<div className={styles['mobile-header']}>
-					<button className={styles['sidebar-button']} onClick={() => setMenuOpen(true)}>☰</button>
-				</div>
-				<Outlet/>
+				<Outlet context={{ onOpenMenu: () => setMenuOpen(true) }}/>
 			</div>
 		</div>
 	);

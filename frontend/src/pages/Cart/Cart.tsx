@@ -1,5 +1,4 @@
 import styles from './Cart.module.css';
-import Header from '../../components/Header/Header.tsx';
 import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
 import CartItem from '../../components/CartItem/CartItem.tsx';
@@ -8,8 +7,9 @@ import type {Product} from '../../interfaces/product.interface.ts';
 import {PREFIX} from '../../helpers/API.ts';
 import axios from 'axios';
 import Button from '../../components/Button/Button.tsx';
-import {useNavigate} from "react-router-dom";
-import {updateCart} from "../../store/cart.slice.ts";
+import {useNavigate, useOutletContext} from 'react-router-dom';
+import {updateCart} from '../../store/cart.slice.ts';
+import TopBar from '../../components/TopBar/TopBar.tsx';
 
 const DELIVERY_FEE = 5;
 
@@ -19,6 +19,8 @@ export function Cart() {
 	const jwt = useSelector((state: RootState) => state.user.jwt);
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
+	const { onOpenMenu } = useOutletContext<{ onOpenMenu: () => void }>();
+
 	const total = items.length > 0 && items.map((i => {
 		const product = cartProducts?.find(p => p.id === i.productId);
 		if (!product) {
@@ -59,7 +61,7 @@ export function Cart() {
 
 	return (
 		<>
-			<Header className={styles['header']}>Cart</Header>
+			<TopBar title={'Cart'} onOpenMenu={onOpenMenu}/>
 			{items.length === 0 && <div className={styles['empty']}>Your cart is empty</div>}
 
 			{items.length > 0 && items.map((i => {

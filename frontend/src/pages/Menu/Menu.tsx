@@ -1,4 +1,3 @@
-import Header from '../../components/Header/Header.tsx';
 import styles from './Menu.module.css';
 import Search from '../../components/Search/Search.tsx';
 import ProductCard from '../../components/ProductCard/ProductCard.tsx';
@@ -7,6 +6,8 @@ import type {Product} from '../../interfaces/product.interface.ts';
 import {useEffect, useState} from 'react';
 import axios, {AxiosError} from 'axios';
 import Pagination from '../../components/Pagination/Pagination.tsx';
+import TopBar from '../../components/TopBar/TopBar.tsx';
+import { useOutletContext } from 'react-router-dom';
 
 function Menu() {
 
@@ -25,6 +26,7 @@ function Menu() {
 	const [page, setPage] = useState<number>(1);
 	const [totalPages, setTotalPages] = useState<number>(1);
 	const [search, setSearch] = useState<string>('');
+	const { onOpenMenu } = useOutletContext<{ onOpenMenu: () => void }>();
 
 	useEffect(() => {
 		const loadMenu = async() => {
@@ -49,7 +51,7 @@ function Menu() {
 	return (
 		<div className={styles['menu-wrapper']}>
 			<div className={styles['head']}>
-				<Header>Menu</Header>
+				<TopBar title={'Menu'} onOpenMenu={onOpenMenu}/>
 				<Search
 					className={styles['search-input']}
 					onSearch={(value) => {
