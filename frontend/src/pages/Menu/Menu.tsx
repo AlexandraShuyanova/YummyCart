@@ -81,7 +81,7 @@ function Menu() {
 				<p>No dishes found</p>
 				}
 			</div>
-			<div className={styles.paginationWrapper}>
+			<div className={styles['pagination-wrapper']}>
 				<Pagination
 					currentPage={page}
 					totalPages={totalPages}

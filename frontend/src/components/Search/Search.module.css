@@ -25,6 +25,8 @@
         border-radius: 8px;
         padding: 10px 16px 10px 36px;
         width: 150px;
+        height: 44px;
+        font-size: 16px;
     }
     .icon {
         position: absolute;
