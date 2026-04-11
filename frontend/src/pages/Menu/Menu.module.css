@@ -14,9 +14,8 @@
 
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(3, 323px);
-    column-gap: 50px;
-    row-gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 16px;
     padding: 30px 0;
     overflow-y: auto;
     align-content: start;
@@ -26,12 +25,21 @@
     margin-top: auto;
     display: flex;
     justify-content: flex-end;
-    /*padding-bottom: 80px;*/
-    /*padding: 60px 0;*/
-    /*padding-bottom: 40px;*/
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/*@media (max-width: 768px) {
 
 }
 
@@ -52,4 +60,4 @@
     .search-input {
         width: 100px;
     }
-}
+}*/
