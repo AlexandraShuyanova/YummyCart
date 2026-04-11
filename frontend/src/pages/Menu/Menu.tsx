@@ -67,7 +67,7 @@ function Menu() {
 						key={product.id}
 						id={product.id}
 						name={product.name}
-						description={product.ingredients.join(',')}
+						description={product.ingredients.join(' • ')}
 						rating={product.rating}
 						price={product.price}
 						image={product.image}
@@ -81,7 +81,7 @@ function Menu() {
 				<p>No dishes found</p>
 				}
 			</div>
-			<div className={styles.paginationWrapper}>
+			<div className={styles['pagination-wrapper']}>
 				<Pagination
 					currentPage={page}
 					totalPages={totalPages}
