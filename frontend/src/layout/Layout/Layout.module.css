@@ -1,6 +1,5 @@
 .layout {
     display: flex;
-    /*justify-content: center;*/
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
@@ -21,7 +20,7 @@
 
 @media (max-width: 768px) {
     .layout {
-        max-width: 500px;
+        max-width: 100%;
     }
 }
 
@@ -54,6 +53,9 @@
         background: none;
         border: none;
         color: var(--text-color);
+    }
+    .content {
+        padding: 16px;
     }
 }
 
