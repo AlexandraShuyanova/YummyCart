@@ -27,7 +27,6 @@
 .content {
     flex: 1;
     padding: 40px 60px;
-    height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     position: relative;

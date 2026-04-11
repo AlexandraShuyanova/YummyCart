@@ -10,6 +10,10 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 12px;
+    position: sticky;
+    top: 0;
+    background: var(--white-color);
+    z-index: 10;
 }
 
 .search-input {
@@ -21,7 +25,6 @@
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 20px 0;
-    overflow-y: auto;
     align-content: start;
 }
 
