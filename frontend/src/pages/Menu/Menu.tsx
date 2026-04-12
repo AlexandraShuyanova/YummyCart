@@ -8,6 +8,9 @@ import axios, {AxiosError} from 'axios';
 import Pagination from '../../components/Pagination/Pagination.tsx';
 import TopBar from '../../components/TopBar/TopBar.tsx';
 import { useOutletContext } from 'react-router-dom';
+import CartBar from "../../components/CartBar/CartBar.tsx";
+import {useSelector} from "react-redux";
+import type {RootState} from "../../store/store.ts";
 
 function Menu() {
 
@@ -20,6 +23,7 @@ function Menu() {
 	};
 
 	const [products, setProducts] = useState<Product[]>([]);
+	const cartItems = useSelector((state: RootState) => state.cart.items);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [error, setError] = useState<string | undefined>();
 	const SIZE = 6;
@@ -81,6 +85,7 @@ function Menu() {
 				<p>No dishes found</p>
 				}
 			</div>
+			{cartItems.length !== 0 && <CartBar />}
 			<div className={styles['pagination-wrapper']}>
 				<Pagination
 					currentPage={page}

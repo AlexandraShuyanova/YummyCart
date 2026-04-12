@@ -50,7 +50,7 @@
 
 @media (max-width: 768px) {
     .pagination-wrapper {
-        padding: 0 16px 16px;
+        padding: 0 16px 96px;
         justify-content: center;
     }
     .header {
@@ -62,4 +62,3 @@
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
     }
 }
-
