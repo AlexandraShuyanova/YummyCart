@@ -12,8 +12,9 @@
     padding-bottom: 12px;
     position: sticky;
     top: 0;
-    background: var(--white-color);
+    background: white;
     z-index: 10;
+    min-height: 64px;
 }
 
 .search-input {
@@ -53,8 +54,12 @@
         justify-content: center;
     }
     .header {
-        padding-top: 16px;
+        box-sizing: border-box;
         gap: 15px;
+        width: calc(100% + 32px);
+        margin: -16px -16px 0;
+        padding: 36px 20px 16px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
     }
 }
 

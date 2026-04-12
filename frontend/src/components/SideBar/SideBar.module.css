@@ -2,7 +2,7 @@
     display: flex;
     padding: 30px;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     box-sizing: border-box;
     position: sticky;
     top: 0;
@@ -88,13 +88,26 @@
 .close-button {
     display: none;
     position: absolute;
-    top: 10px;
-    right: 22px;
+    top: 14px;
+    right: 14px;
     z-index: 1001;
 
-    background: none;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
     border: none;
-    font-size: 20px;
+    border-radius: 8px;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--text-secondary-color);
+    cursor: pointer;
+    background: #F3F4F6;
+}
+
+.close-button:hover {
+    background: #F3F4F6;
     color: var(--text-color);
 }
 
@@ -113,8 +126,9 @@
     }
 
     .close-button {
-        display: block;
+        display: flex;
     }
+
 }
 
 
