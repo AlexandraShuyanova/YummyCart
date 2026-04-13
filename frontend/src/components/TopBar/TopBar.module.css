@@ -12,7 +12,7 @@
     border-radius: 50%;
     border: none;
     background: #F3F4F6;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
     font-size: 20px;
     color: var(--text-color);
     cursor: pointer;
