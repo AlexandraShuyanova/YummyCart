@@ -6,7 +6,7 @@
 .header {
     display: flex;
     width: 100%;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 12px;
@@ -17,8 +17,20 @@
     min-height: 64px;
 }
 
+.header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 .search-input {
     flex: 1;
+}
+
+.tabs {
+    display: none;
 }
 
 .cards-container {
@@ -33,6 +45,29 @@
     margin-top: auto;
     display: flex;
     justify-content: flex-end;
+}
+
+.header-more-button {
+    display: none;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 50%;
+    background: #F3F4F6;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.header-more-button span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--text-color);
 }
 
 @media (min-width: 768px) {
@@ -53,12 +88,47 @@
         padding: 0 16px 96px;
         justify-content: center;
     }
+
     .header {
         box-sizing: border-box;
-        gap: 15px;
+        gap: 23px;
         width: calc(100% + 32px);
         margin: -16px -16px 0;
-        padding: 36px 20px 16px;
+        padding: 36px 20px 0;
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
     }
+
+    .header-top {
+        gap: 15px;
+    }
+
+    .header-more-button {
+        display: flex;
+    }
+
+    .tabs {
+        display: flex;
+        gap: 56px;
+        overflow-x: auto;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .tab,
+    .tab-active {
+        border: none;
+        background: transparent;
+        padding: 0 0 10px;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+        color: var(--text-secondary-color);
+        cursor: pointer;
+    }
+
+    .tab-active {
+        color: var(--primary-color);
+        border-bottom: 2px solid var(--primary-color);
+    }
+
 }

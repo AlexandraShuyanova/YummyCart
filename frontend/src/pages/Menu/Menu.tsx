@@ -55,14 +55,26 @@ function Menu() {
 	return (
 		<div className={styles['menu-wrapper']}>
 			<div className={styles['header']}>
-				<TopBar title={'Menu'} onOpenMenu={onOpenMenu}/>
-				<Search
-					className={styles['search-input']}
-					onSearch={(value) => {
-						setSearch(value);
-						setPage(1);
-					}}
-				/>
+				<div className={styles['header-top']}>
+					<TopBar title={'Menu'} onOpenMenu={onOpenMenu}/>
+					<Search
+						className={styles['search-input']}
+						onSearch={(value) => {
+							setSearch(value);
+							setPage(1);
+						}}
+					/>
+					<button className={styles['header-more-button']} type="button" aria-label="More options">
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+				<div className={styles['tabs']}>
+					<button className={styles['tab-active']} type="button">Popular</button>
+					<button className={styles['tab']} type="button">Mains</button>
+					<button className={styles['tab']} type="button">Salads</button>
+				</div>
 			</div>
 			<div className={styles['cards-container']}>
 				{error && <>{error}</>}

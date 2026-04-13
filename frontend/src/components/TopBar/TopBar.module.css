@@ -7,11 +7,12 @@
 
 .burger {
     display: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     border: none;
     background: #F3F4F6;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
     font-size: 20px;
     color: var(--text-color);
     cursor: pointer;
