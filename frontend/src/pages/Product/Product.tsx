@@ -32,9 +32,6 @@ export function Product() {
 					</IconButton>
 					<Header>{product.name}</Header>
 				</div>
-				<Button appearance={'small'} onClick={add}>
-					<img src={cartItemButton} alt='Add to cart'></img>&nbsp;
-					Add to cart</Button>
 			</div>
 			<div className={styles['content']}>
 				<div className={styles['image']} style={{backgroundImage: `url(${product.image})`}}></div>
@@ -60,6 +57,11 @@ export function Product() {
 						</ul>
 					</div>
 				</div>
+			</div>
+			<div className={styles['footer']}>
+				<Button className={styles['add-to-cart-button']} appearance={'small'} onClick={add}>
+					<img src={cartItemButton} alt='Add to cart'></img>&nbsp;
+					Add to cart</Button>
 			</div>
 		</div>
 	);
