@@ -9,7 +9,7 @@ import exitBtn from '../../assets/exitBtn.svg';
 import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
 import {userActions} from '../../store/user.slice.ts';
-import IconButton from "../IconButton/IconButton.tsx";
+import IconButton from '../IconButton/IconButton.tsx';
 
 type SideBarProps = {
 	onMenuOpen?: (value: boolean) => void;
@@ -47,15 +47,19 @@ function SideBar({onMenuOpen, isMobile=false} : SideBarProps) {
                 ✕
 			</IconButton>
 			<div className={styles['menu']}>
-				<NavLink to='/' className={({isActive}) => cn(styles['link'], {
-					[styles['active']]: isActive
-				})}>
+				<NavLink to='/'
+				         onClick={() => onMenuOpen?.(false)}
+						 className={({isActive}) => cn(styles['link'], {
+						[styles['active']]: isActive
+					})}>
 					<img src={menu} alt="Menu icon"/>
 					<span>Menu</span>
 				</NavLink>
-				<NavLink to='/cart' className={({isActive}) => cn(styles['link'], {
-					[styles['active']]: isActive
-				})}>
+				<NavLink to='/cart'
+						 onClick={() => onMenuOpen?.(false)}
+						 className={({isActive}) => cn(styles['link'], {
+						[styles['active']]: isActive
+					})}>
 					<img src={cart} alt="Cart icon"/>Cart
 					<span
 						className={styles['cart-count']}>{cartItems.reduce((acc, item) => acc += item.count, 0)}</span>
