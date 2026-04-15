@@ -9,6 +9,7 @@ import exitBtn from '../../assets/exitBtn.svg';
 import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
 import {userActions} from '../../store/user.slice.ts';
+import IconButton from "../IconButton/IconButton.tsx";
 
 type SideBarProps = {
 	onMenuOpen?: (value: boolean) => void;
@@ -38,12 +39,13 @@ function SideBar({onMenuOpen, isMobile=false} : SideBarProps) {
 				<div className={styles['name']}>{profile?.name}</div>
 				<div className={styles['email']}>{profile?.email}</div>
 			</div>
-			<button
+			<IconButton
 				className={styles['close-button']}
+				variant="ghost"
 				onClick={() => onMenuOpen?.(false)}
 			>
                 ✕
-			</button>
+			</IconButton>
 			<div className={styles['menu']}>
 				<NavLink to='/' className={({isActive}) => cn(styles['link'], {
 					[styles['active']]: isActive

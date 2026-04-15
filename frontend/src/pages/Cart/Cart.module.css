@@ -1,5 +1,10 @@
 .header {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
     margin-bottom: 40px;
+    gap: 40px;
 }
 
 .row {
@@ -47,3 +52,8 @@
     max-width: 612px;
     padding: 14px 40px;
 }
+
+.back {
+    display: flex;
+}
+

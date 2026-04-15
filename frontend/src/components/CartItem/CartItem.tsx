@@ -7,6 +7,7 @@ import plus from '../../assets/plus.svg';
 import minus from '../../assets/minus.svg';
 import removeIcon from '../../assets/remove.svg';
 import {Link} from 'react-router-dom';
+import IconButton from "../IconButton/IconButton.tsx";
 
 function CartItem(props: CartItemProps) {
 	const dispatch = useDispatch<AppDispatch>();
@@ -45,16 +46,16 @@ function CartItem(props: CartItemProps) {
 				<div className={styles['price']}>{props.price}&nbsp;€</div>
 			</div>
 			<div className={styles['actions']}>
-				<button className={styles['minus']} onClick={decrease}>
+				<IconButton variant="minus" onClick={decrease}>
 					<img src={minus} alt='Minus icon'></img>
-				</button>
+				</IconButton>
 				<div className={styles['count']}>{props.count}</div>
-				<button className={styles['plus']} onClick={increase}>
+				<IconButton variant="plus" onClick={increase}>
 					<img src={plus} alt='Plus icon'></img>
-				</button>
-				<button className={styles['remove']} onClick={remove}>
+				</IconButton>
+				<IconButton variant="remove" onClick={remove}>
 					<img src={removeIcon} alt='Remove icon'></img>
-				</button>
+				</IconButton>
 			</div>
 		</div>
 	);

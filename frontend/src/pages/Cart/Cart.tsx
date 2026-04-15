@@ -10,6 +10,9 @@ import Button from '../../components/Button/Button.tsx';
 import {useNavigate, useOutletContext} from 'react-router-dom';
 import {updateCart} from '../../store/cart.slice.ts';
 import TopBar from '../../components/TopBar/TopBar.tsx';
+import Header from '../../components/Header/Header.tsx';
+import arrow from '../../assets/left-arrow.svg';
+import IconButton from '../../components/IconButton/IconButton.tsx';
 
 const DELIVERY_FEE = 5;
 
@@ -19,7 +22,7 @@ export function Cart() {
 	const jwt = useSelector((state: RootState) => state.user.jwt);
 	const navigate = useNavigate();
 	const dispatch = useDispatch<AppDispatch>();
-	const { onOpenMenu } = useOutletContext<{ onOpenMenu: () => void }>();
+	/*const { onOpenMenu } = useOutletContext<{ onOpenMenu: () => void }>();*/
 
 	const total = items.length > 0 && items.map((i => {
 		const product = cartProducts?.find(p => p.id === i.productId);
@@ -61,7 +64,12 @@ export function Cart() {
 
 	return (
 		<>
-			<TopBar title={'Cart'} onOpenMenu={onOpenMenu}/>
+			<div className={styles['header']}>
+				<IconButton className={styles['back']} variant="ghost" onClick={() => navigate(-1)}>
+					<img src={arrow} alt={'Back icon'}></img>
+				</IconButton>
+				<Header>Cart</Header>
+			</div>
 			{items.length === 0 && <div className={styles['empty']}>Your cart is empty</div>}
 
 			{items.length > 0 && items.map((i => {

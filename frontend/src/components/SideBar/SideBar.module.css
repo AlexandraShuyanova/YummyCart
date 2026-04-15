@@ -87,28 +87,6 @@
 
 .close-button {
     display: none;
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    z-index: 1001;
-
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    padding: 0;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    font-size: 22px;
-    line-height: 1;
-    color: var(--text-secondary-color);
-    cursor: pointer;
-    background: #F3F4F6;
-}
-
-.close-button:hover {
-    background: #F3F4F6;
-    color: var(--text-color);
 }
 
 @media (max-width: 768px) {
@@ -127,8 +105,11 @@
 
     .close-button {
         display: flex;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        z-index: 1001;
     }
-
 }
 
 

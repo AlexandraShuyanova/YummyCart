@@ -9,6 +9,7 @@ import type {AppDispatch} from "../../store/store.ts";
 import cartItemButton from '../../assets/cart-button-icon.svg';
 import ratingStar from "../../assets/rating-star.svg";
 import arrow from '../../assets/left-arrow.svg';
+import IconButton from "../../components/IconButton/IconButton.tsx";
 
 export function Product() {
 	const product = useLoaderData() as Product;
@@ -26,9 +27,9 @@ export function Product() {
 		<div className={styles['product-page']}>
 			<div className={styles['header']}>
 				<div className={styles['left']}>
-					<button className={styles['back']} onClick={() => navigate(-1)}>
+					<IconButton className={styles['back']} variant="ghost" onClick={() => navigate(-1)}>
 						<img src={arrow} alt={'Back icon'}></img>
-					</button>
+					</IconButton>
 					<Header>{product.name}</Header>
 				</div>
 				<Button appearance={'small'} onClick={add}>

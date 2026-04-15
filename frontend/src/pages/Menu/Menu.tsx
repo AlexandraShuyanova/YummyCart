@@ -11,6 +11,7 @@ import { useOutletContext } from 'react-router-dom';
 import CartBar from "../../components/CartBar/CartBar.tsx";
 import {useSelector} from "react-redux";
 import type {RootState} from "../../store/store.ts";
+import IconButton from "../../components/IconButton/IconButton.tsx";
 
 function Menu() {
 
@@ -64,11 +65,11 @@ function Menu() {
 							setPage(1);
 						}}
 					/>
-					<button className={styles['header-more-button']} type="button" aria-label="More options">
+					<IconButton className={styles['header-more-button']} variant="ghost" type="button" aria-label="More options">
 						<span></span>
 						<span></span>
 						<span></span>
-					</button>
+					</IconButton>
 				</div>
 				<div className={styles['tabs']}>
 					<button className={styles['tab-active']} type="button">Popular</button>
