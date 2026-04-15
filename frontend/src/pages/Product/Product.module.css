@@ -19,8 +19,10 @@
 }
 
 .image {
-    width: 323px;
-    height: 248px;
+    width: 100%;
+    max-width: 323px;
+    height: auto;
+    aspect-ratio: 323/248;
     background-size: cover;
     border-radius: 10px;
 }
