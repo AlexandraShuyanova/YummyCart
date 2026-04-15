@@ -3,7 +3,7 @@
     max-width: 1400px;
     margin: 0 auto;
     width: 100%;
-    /*min-height: 100vh;*/
+    min-height: 100dvh;
 }
 
 @media (max-width: 1394px) {
@@ -21,6 +21,7 @@
 @media (max-width: 768px) {
     .layout {
         max-width: 100%;
+        min-height: 100dvh;
     }
 }
 

@@ -112,11 +112,19 @@ li {
 @media (max-width: 768px) {
     .content {
         flex-direction: column;
+        gap: 12px;
+        margin-top: 12px;
     }
+
     .footer {
-        margin-top: 20px;
+        margin-top: 12px;
         align-self: center;
     }
+
+    .left {
+        gap: 16px;
+    }
+
 }
 
 
