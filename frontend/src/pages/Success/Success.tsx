@@ -18,9 +18,12 @@ export function Success() {
 
 	return (
 		<div className={styles['success']}>
-			<img src= {pizza} alt="Pizza image" className={styles['pizza']} />
+			<img src={pizza} alt="Pizza image" className={styles['pizza']} />
 			<div className={styles['text']}>Order placed successfully!</div>
-			<Button appearance={'big'} className={styles['button']}  onClick={() => navigate('/')}>Order again</Button>
+			<div className={styles['subtitle']}>Your order is on the way</div>
+			<Button appearance={'big'} className={styles['button']} onClick={() => navigate('/')}>
+				Order again
+			</Button>
 		</div>
 	);
 }

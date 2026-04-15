@@ -119,10 +119,15 @@ li {
     .footer {
         margin-top: 12px;
         align-self: center;
+        width: 100%;
     }
 
     .left {
         gap: 16px;
+    }
+
+    .add-to-cart-button {
+        width: 100%;
     }
 }
 

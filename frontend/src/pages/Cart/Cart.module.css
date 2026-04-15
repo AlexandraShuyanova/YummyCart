@@ -44,13 +44,12 @@
     font-style: normal;
 }
 
-.order-btn {
+.order-btn-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    max-width: 612px;
-    padding: 14px 40px;
+    /*max-width: 612px;*/
 }
 
 .back {
@@ -60,5 +59,13 @@
 @media (max-width: 768px) {
     .header {
         gap: 16px;
+    }
+
+    .order-btn-wrapper {
+        width: 100%;
+    }
+
+    .order-btn {
+        width: 100% !important;
     }
 }
