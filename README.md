@@ -26,6 +26,22 @@ Backend API: https://yummycart-production.up.railway.app/pizza-api/
 
 ---
 
+## 🧱 Frontend Architecture
+
+The frontend is structured with clear separation of concerns to keep the code scalable and maintainable:
+
+- **components/** – reusable UI components  
+- **pages/** – main application pages (Menu, Product, Cart, Auth)  
+- **layouts/** – shared layouts  
+- **store/** – global state (Redux Toolkit: user, cart)  
+- **interfaces/** – TypeScript types  
+- **helpers/** – utilities and shared logic  
+- **assets/** – static files  
+
+The architecture supports both mobile and desktop layouts without duplicating logic.
+
+---
+
 ## ✨ Features
 
 - 🔐 Authentication (JWT)
