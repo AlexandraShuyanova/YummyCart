@@ -94,6 +94,7 @@ Backend API: https://yummycart-production.up.railway.app/pizza-api/
   Order confirmation screen with visual feedback and option to quickly place a new order.
 </p>
 
+### 💻 Desktop
 
 ### 🍕 Menu
 
