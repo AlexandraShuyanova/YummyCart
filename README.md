@@ -49,44 +49,49 @@ Backend API: https://yummycart-production.up.railway.app/pizza-api/
 <p align="center">
   Main menu with product listing, categories, and quick access to cart.
 </p>
+
 ---
 
 ### 📄 Product
 
-Product details page with price, rating, and ingredients.
-
 <p align="center">
   <img width="300" alt="dish-mobile" src="https://github.com/user-attachments/assets/2cb0d0a0-1c0d-4a5d-8b97-9b924c1633f9" />
+</p>
+<p align="center">
+  Product details page with price, rating, and ingredients.
 </p>
 
 ---
 
 ### 🛒 Cart
 
-Shopping cart with item management, quantity controls, and order summary. Includes dynamic price calculation and user-friendly layout.
-
 <p align="center">
   <img width="300" alt="cart" src="https://github.com/user-attachments/assets/cfc735bb-19da-4e20-a16f-8e7b53148b11" />
+</p>
+<p align="center">
+  Shopping cart with item management, quantity controls, and order summary. Includes dynamic price calculation and user-friendly layout.
 </p>
 
 ---
 
 ### 🔍 Search & Highlight
 
-Search functionality with real-time filtering and keyword highlighting in product names and ingredients.
-
 <p align="center">
   <img width="300" alt="search" src="https://github.com/user-attachments/assets/c78b4d8f-503f-470d-bb6f-07ab3ad1b2ad" />
+</p>
+<p align="center">
+  Search functionality with real-time filtering and keyword highlighting in product names and ingredients.
 </p>
 
 ---
 
 ### ✅ Order Success
 
-Order confirmation screen with visual feedback and option to quickly place a new order.
-
 <p align="center">
  <img width="300" alt="success" src="https://github.com/user-attachments/assets/d3962d19-ec61-48bb-ae5c-bf15e3114cc9" />
+</p>
+<p align="center">
+  Order confirmation screen with visual feedback and option to quickly place a new order.
 </p>
 
 
