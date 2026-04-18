@@ -122,8 +122,6 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 
 ### 🔍 Search & Highlight
 
-Highlights matched text in product names and ingredients.
-
 <p align="center">
 <img width="800" src="https://github.com/user-attachments/assets/bf96c160-bbc1-465e-bb28-7936cc3e77e1"/> 
 </p>
