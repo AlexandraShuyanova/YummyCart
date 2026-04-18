@@ -40,11 +40,25 @@ Backend API: https://yummycart-production.up.railway.app/pizza-api/
 ---
 
 ## 📸 Screenshots
-### 📱 Mobile
+### 📱 Mobile 
 ### 🍕 Menu
+
+Main menu with product listing, categories, and quick access to cart.
+
 <p align="center">
   <img width="300" alt="menu-mobile" src="https://github.com/user-attachments/assets/6aae5a42-989d-4306-826a-cdd42f2166a5" />
 </p>
+
+---
+
+### 📄 Product
+
+Product details page with price, rating, and ingredients.
+
+<p align="center">
+  <img width="300" alt="dish-mobile" src="https://github.com/user-attachments/assets/2cb0d0a0-1c0d-4a5d-8b97-9b924c1633f9" />
+</p>
+
 
 ### 🍕 Menu
 
