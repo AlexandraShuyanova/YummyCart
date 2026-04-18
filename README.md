@@ -43,7 +43,7 @@ Backend API: https://yummycart-production.up.railway.app/pizza-api/
 ### 📱 Mobile
 ### 🍕 Menu
 <p align="center">
-  <img width="386" height="845" alt="menu-mobile" src="https://github.com/user-attachments/assets/6aae5a42-989d-4306-826a-cdd42f2166a5" />
+  <img width="300" alt="menu-mobile" src="https://github.com/user-attachments/assets/6aae5a42-989d-4306-826a-cdd42f2166a5" />
 </p>
 
 ### 🍕 Menu
