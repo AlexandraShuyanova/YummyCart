@@ -8,8 +8,7 @@ The project focuses on scalable frontend architecture, predictable state managem
 
 ## 🌐 Live Demo
 
-Frontend: https://yummy-cart-eta.vercel.app  
-Backend API: https://yummycart-production.up.railway.app/pizza-api/
+Live Demo: https://yummy-cart-eta.vercel.app  
 
 ---
 
