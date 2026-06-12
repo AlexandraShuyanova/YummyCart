@@ -8,8 +8,7 @@ The project focuses on scalable frontend architecture, predictable state managem
 
 ## 🌐 Live Demo
 
-Frontend: https://yummy-cart-eta.vercel.app  
-Backend API: https://yummycart-production.up.railway.app/pizza-api/
+Live Demo: https://yummy-cart-eta.vercel.app  
 
 ---
 
@@ -23,6 +22,22 @@ Backend API: https://yummycart-production.up.railway.app/pizza-api/
 - Node.js + Express
 - JWT authentication
 - Docker
+
+---
+
+## 🧱 Frontend Architecture
+
+The frontend is structured with clear separation of concerns to keep the code scalable and maintainable:
+
+- **components/** – reusable UI components  
+- **pages/** – main application pages (Menu, Product, Cart, Auth)  
+- **layouts/** – shared layouts  
+- **store/** – global state (Redux Toolkit: user, cart)  
+- **interfaces/** – TypeScript types  
+- **helpers/** – utilities and shared logic  
+- **assets/** – static files  
+
+The architecture supports both mobile and desktop layouts without duplicating logic.
 
 ---
 
@@ -40,6 +55,61 @@ Backend API: https://yummycart-production.up.railway.app/pizza-api/
 ---
 
 ## 📸 Screenshots
+### 📱 Mobile 
+### 🍕 Menu
+
+<p align="center">
+  <img width="300" alt="menu-mobile" src="https://github.com/user-attachments/assets/6aae5a42-989d-4306-826a-cdd42f2166a5" />
+</p>
+<p align="center">
+  Main menu with product listing, categories, and quick access to cart.
+</p>
+
+---
+
+### 📄 Product
+
+<p align="center">
+  <img width="300" alt="dish-mobile" src="https://github.com/user-attachments/assets/2cb0d0a0-1c0d-4a5d-8b97-9b924c1633f9" />
+</p>
+<p align="center">
+  Product details page with price, rating, and ingredients.
+</p>
+
+---
+
+### 🛒 Cart
+
+<p align="center">
+  <img width="300" alt="cart" src="https://github.com/user-attachments/assets/cfc735bb-19da-4e20-a16f-8e7b53148b11" />
+</p>
+<p align="center">
+  Shopping cart with item management, quantity controls, and order summary. Includes dynamic price calculation and user-friendly layout.
+</p>
+
+---
+
+### 🔍 Search & Highlight
+
+<p align="center">
+  <img width="300" alt="search" src="https://github.com/user-attachments/assets/c78b4d8f-503f-470d-bb6f-07ab3ad1b2ad" />
+</p>
+<p align="center">
+  Search functionality with real-time filtering and keyword highlighting in product names and ingredients.
+</p>
+
+---
+
+### ✅ Order Success
+
+<p align="center">
+ <img width="300" alt="success" src="https://github.com/user-attachments/assets/d3962d19-ec61-48bb-ae5c-bf15e3114cc9" />
+</p>
+<p align="center">
+  Order confirmation screen with visual feedback and option to quickly place a new order.
+</p>
+
+### 💻 Desktop
 
 ### 🍕 Menu
 
@@ -50,8 +120,6 @@ Backend API: https://yummycart-production.up.railway.app/pizza-api/
 ---
 
 ### 🔍 Search & Highlight
-
-Highlights matched text in product names and ingredients.
 
 <p align="center">
 <img width="800" src="https://github.com/user-attachments/assets/bf96c160-bbc1-465e-bb28-7936cc3e77e1"/> 
