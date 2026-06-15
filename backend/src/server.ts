@@ -61,40 +61,6 @@ interface AuthRequest extends Request {
     user?: { id: number; email: string };
 }
 
-
-// ===== MOCK DATABASE =====
-const users: User[] = [];
-const carts: Cart[] = [];
-
-const products: Product[] = [
-        { id: 1, name: 'Delight', price: 18, ingredients: ['salami','arugula','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png', rating: 4.7 },
-        { id: 2, name: 'Tacos', price: 17, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
-        { id: 3, name: 'Extra Spicy', price: 19, ingredients: ['spicy sauce','mushrooms','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food3.png', rating: 4.9 },
-        { id: 4, name: 'Roast with Cheese', price: 16, ingredients: ['potatoes','cheese','pepper','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png', rating: 4.4 },
-        { id: 5, name: 'Caesar with Chicken', price: 16, ingredients: ['chicken','cheese','caesar sauce','tomatoes'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food5.png', rating: 4.8 },
-        { id: 6, name: 'Green Salad', price: 16, ingredients: ['cucumber','nuts','pepper'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food6.png', rating: 4.5 },
-
-        { id: 7, name: 'Green Salad', price: 16, ingredients: ['cucumber','nuts','pepper'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food6.png', rating: 4.5 },
-        { id: 8, name: 'Caesar with Chicken', price: 16, ingredients: ['chicken','cheese','caesar sauce','tomatoes'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food5.png', rating: 4.8 },
-        { id: 9, name: 'Roast with Cheese', price: 16, ingredients: ['potatoes','cheese','pepper','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png', rating: 4.4 },
-        { id: 10, name: 'Extra Spicy', price: 16, ingredients: ['spicy sauce','mushrooms','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food3.png', rating: 4.9 },
-        { id: 11, name: 'Delight', price: 18, ingredients: ['salami','arugula','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png', rating: 4.7 },
-        { id: 12, name: 'Tacos', price: 17, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
-
-        { id: 13, name: 'Delight', price: 18, ingredients: ['salami','arugula','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food1.png', rating: 4.7 },
-        { id: 14, name: 'Tacos', price: 17, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
-        { id: 15, name: 'Extra Spicy', price: 19, ingredients: ['spicy sauce','mushrooms','tomatoes','olives'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food3.png', rating: 4.9 },
-        { id: 16, name: 'Roast with Cheese', price: 16, ingredients: ['potatoes','cheese','pepper','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food4.png', rating: 4.4 },
-        { id: 17, name: 'Caesar with Chicken', price: 16, ingredients: ['chicken','cheese','caesar sauce','tomatoes'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food5.png', rating: 4.8 },
-        { id: 18, name: 'Green Salad', price: 16, ingredients: ['cucumber','nuts','pepper'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food6.png', rating: 4.5 },
-
-        { id: 19, name: 'Tacos', price: 17, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
-        { id: 20, name: 'Tacos', price: 17, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
-        { id: 21, name: 'Tacos', price: 17, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
-        { id: 22, name: 'Tacos', price: 17, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
-        { id: 23, name: 'Tacos', price: 17, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
-        { id: 24, name: 'Tacos', price: 17, ingredients: ['hot pepper','tortilla','minced meat'], image: 'https://cdn-bucket.hb.ru-msk.vkcs.cloud/purple-images/demo/food/food2.png', rating: 4.8 },
-];
 const orders: Order[] = [];
 
 
@@ -160,14 +126,26 @@ app.post('/pizza-api/auth/register', async (req: Request, res: Response) => {
 
 app.post('/pizza-api/auth/login', async (req: Request, res: Response) => {
     const { email, password } = req.body;
-    const user = users.find(u => u.email === email);
-    if (!user) return res.status(400).json({ error: 'User not found' });
+
+    const user =  await prisma.user.findUnique({
+        where: {
+            email
+        }
+    });
+
+    if (!user) return res.status(400).json({
+        error: 'User not found'
+    });
 
     const passOk = await bcrypt.compare(password, user.password);
-    if (!passOk) return res.status(400).json({ error: 'Invalid password' });
+    if (!passOk) return res.status(400).json({
+        error: 'Invalid password'
+    });
 
     if (!email || !password) {
-        return res.status(400).json({ error: 'All fields are required' });
+        return res.status(400).json({
+            error: 'All fields are required'
+        });
     }
 
     const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET);
@@ -191,81 +169,187 @@ app.get('/pizza-api/user/profile', auth, async (req: AuthRequest, res: Response)
 });
 
 
-app.get('/pizza-api/products', (req: Request, res: Response) => {
-    const { name } = req.query;
-    let list = products;
-    if (name && typeof name === 'string')
-        list = products.filter(p =>
-            p.name.toLowerCase().includes(name.toLowerCase()));
-    res.json(list);
+app.get('/pizza-api/products', async(req: Request, res: Response) => {
+    const filter = String(req.query.filter ?? '');
+
+    let products = await prisma.product.findMany({
+        where: {
+            OR: [
+                {
+                    name: {
+                        contains: filter,
+                        mode: 'insensitive'
+                    }
+                },
+                {
+                    ingredients: {
+                        has: filter
+                    }
+                }
+            ]
+        }
+    })
+    res.json(products);
 });
 
-app.get('/pizza-api/cart', auth, (req: AuthRequest, res: Response) => {
+app.get('/pizza-api/cart', auth, async (req: AuthRequest, res: Response) => {
     const userId = req.user!.id;
-    const cart = carts.find(c => c.userId === userId);
+
+    const cart = await prisma.cart.findUnique({
+        where: {
+            userId
+        }
+    })
+
     if (!cart) {
-        return res.json({ items: [] });
+        return res.json({items: []});
     }
-    res.json({ items: cart.items });
+
+    const items = await prisma.cartItem.findMany({
+        where: {
+            cartId: cart.id
+        },
+        include: {
+            product: true
+        },
+        orderBy: {
+            id: 'asc'
+        }
+    })
+    res.json({ items: items});
 });
 
-app.post('/pizza-api/cart/update', auth, (req: AuthRequest, res: Response) => {
+app.post('/pizza-api/cart/update', auth, async(req: AuthRequest, res: Response) => {
     const { productId, action } = req.body;
     const userId = req.user!.id;
 
-    let cart = carts.find(c => c.userId === userId);
+    let cart = await prisma.cart.findUnique({
+        where: {
+            userId
+        }
+    })
 
-    if (!cart) {
-        cart = { userId, items: [] };
-        carts.push(cart);
+    if(!cart) {
+        cart = await prisma.cart.create({
+            data: {
+                userId
+            }
+        });
     }
 
-    const item = cart.items.find(i => i.productId === productId);
+    const  existingItem = await prisma.cartItem.findFirst({
+        where: {
+            cartId: cart.id,
+            productId
+        }
+    })
 
-    if (action === 'increase') {
-        if (item) {
-            item.count++;
-        } else {
-            cart.items.push({ productId, count: 1 });
+    if(action === 'increase') {
+        if(existingItem) {
+            await prisma.cartItem.update({
+                where: {
+                    id: existingItem.id
+                },
+                data: {
+                    count: {
+                        increment: 1
+                    }
+                }
+            });
+        }
+        else {
+            await prisma.cartItem.create({
+                data: {
+                    cartId: cart.id,
+                    productId,
+                    count: 1
+                }
+            })
         }
     }
-
     if (action === 'decrease') {
-        if (item && item.count > 1) {
-            item.count--;
-        } else {
-            cart.items = cart.items.filter(i => i.productId !== productId);
+        if (existingItem) {
+            if (existingItem.count > 1) {
+                await prisma.cartItem.update({
+                    where: {
+                        id: existingItem.id
+                    },
+                    data: {
+                        count: {
+                            decrement: 1
+                        }
+                    }
+                })
+            }
+            else {
+                await prisma.cartItem.delete({
+                    where: {
+                        id: existingItem.id
+                    }
+                })
+            }
         }
     }
-
     if (action === 'remove') {
-        cart.items = cart.items.filter(i => i.productId !== productId);
+        if (existingItem) {
+            await prisma.cartItem.delete({
+                where: {
+                    id: existingItem.id
+                }
+            })
+        }
     }
-
     if (action === 'clear') {
-        cart.items = [];
+        await prisma.cartItem.deleteMany({
+            where: {
+                cartId: cart.id
+            }
+        })
     }
 
-    res.json({items: cart.items});
+    let items = await prisma.cartItem.findMany({
+        where: {
+            cartId: cart.id,
+        },
+        include: {
+            product: true
+        },
+        orderBy: {
+            id: 'asc'
+        }
+    })
+    res.json({items: items});
 });
 
-app.get('/pizza-api/products-paged', (req: Request, res: Response) => {
+app.get('/pizza-api/products-paged', async(req: Request, res: Response) => {
     const {
         page = '1',
-        size = '10',
-        sortby,
+        size = '6',
+        sortBy = 'name',
         order = 'asc',
-        name
     } = req.query;
 
-    let list = [...products];
+    const filter = String(req.query.filter ?? '');
 
-    // 🔍 Filtering by name and ingredients
-    if (name && typeof name === 'string') {
-        list = list.filter(p =>
-            p.name.toLowerCase().includes(name.toLowerCase()) || p.ingredients.some(item => item.toLowerCase().includes(name.toLowerCase()))
-        );
-    }
+    let products = await prisma.product.findMany({
+        where: {
+            OR: [
+                {
+                    name: {
+                        contains: filter,
+                        mode: 'insensitive'
+                    }
+                },
+                {
+                    ingredients: {
+                        has: filter
+                    }
+                }
+            ]
+        },
+    })
+
+    /*let list = [...products];
 
     // 🔃 Sorting
     if (sortby && typeof sortby === 'string') {
@@ -274,40 +358,66 @@ app.get('/pizza-api/products-paged', (req: Request, res: Response) => {
             if (a[sortby] > b[sortby]) return order === 'desc' ? -1 : 1;
             return 0;
         });
-    }
+    }*/
 
-    // 📄 Pagination
+    /*// 📄 Pagination
     const pageNum = Number(page);
     const sizeNum = Number(size);
     const start = pageNum * sizeNum;
     const end = start + sizeNum;
 
-    const paginated = list.slice(start, end);
+    const paginated = list.slice(start, end);*/
 
-    res.json({
+    /*res.json({
         page: pageNum,
         size: sizeNum,
         total: list.length,
         totalPages: Math.ceil(list.length / sizeNum),
         items: paginated
-    });
+    });*/
+
+    res.json({
+        page: page,
+        size: size,
+        total: size,
+        totalPages: 1,
+        items: products
+    })
 });
 
-app.get('/pizza-api/products/:id', (req: Request, res: Response) => {
+app.get('/pizza-api/products/:id', async(req: Request, res: Response) => {
     const id = Number(req.params.id);
-    const product = products.find(p => p.id === id);
+    const product =  await prisma.product.findUnique({
+        where: {
+            id
+        }
+    });
+
     if (!product)
-        return res.status(404).json({ error: 'Not found' });
+        return res.status(404).json({
+            error: 'Not found'
+        });
     res.json(product);
 });
 
-app.post('/pizza-api/order', auth, (req: AuthRequest, res: Response) => {
-    const { products: items } = req.body;
-    if (!Array.isArray(items)) return res.status(400).json({ error: 'Invalid products format' });
+app.post('/pizza-api/order', auth, async(req: AuthRequest, res: Response) => {
+    const { products } = req.body;
 
+    if (!Array.isArray(products)) return res.status(400).json({
+        error: 'Invalid products format'
+    });
 
-    const order: Order = { id: orders.length + 1, userId: req.user!.id, products: items, createdAt: new Date() };
-    orders.push(order);
+    const order = await prisma.order.create({
+        data: {
+            userId: req.user!.id,
+            products: {
+                create: products.map(item => ({
+                    productId: item.productId,
+                    count: item.count
+                }))
+            },
+        }
+    })
     res.json({ message: 'Order created', order });
 });
 

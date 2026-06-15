@@ -37,7 +37,7 @@ function Menu() {
 		const loadMenu = async() => {
 			try {
 				setIsLoading(true);
-				const {data} = await axios.get<ProductsPagedResponse>(`${PREFIX}/products-paged/?page=${page - 1}&size=${SIZE}&name=${search}`);
+				const {data} = await axios.get<ProductsPagedResponse>(`${PREFIX}/products-paged/?page=${page - 1}&size=${SIZE}&filter=${search}`);
 				setProducts(data.items);
 				setTotalPages(data.totalPages);
 				setIsLoading(false);
@@ -99,13 +99,13 @@ function Menu() {
 				}
 			</div>
 			{cartItems.length !== 0 && <CartBar />}
-			<div className={styles['pagination-wrapper']}>
+			{/*<div className={styles['pagination-wrapper']}>
 				<Pagination
 					currentPage={page}
 					totalPages={totalPages}
 					onChange={setPage}
 				/>
-			</div>
+			</div>*/}
 		</div>
 	);
 };
