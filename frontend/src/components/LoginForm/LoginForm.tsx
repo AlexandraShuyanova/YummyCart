@@ -1,7 +1,11 @@
 import styles from './LoginForm.module.css';
-import type {LoginFormProps} from './LoginForm.props.ts';
 import Input from '../Input/Input.tsx';
 import Button from '../Button/Button.tsx';
+import type {FormHTMLAttributes} from 'react';
+
+export interface LoginFormProps extends FormHTMLAttributes<HTMLFormElement> {
+	label?: string
+}
 
 function LoginForm({className, ...props} : LoginFormProps) {
 	return <form className={styles['login-form']} {...props}>

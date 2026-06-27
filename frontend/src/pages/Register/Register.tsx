@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
 import {register, userActions} from '../../store/user.slice.ts';
 import logo from "../../assets/auth-logo.svg";
+import Heading from "../../components/Heading/Heading.tsx";
 
 export type RegisterForm = {
 	email: {
@@ -46,7 +47,7 @@ export function Register() {
 	return (
 		<div className={styles['register']}>
 			<img src={logo} className={styles['mobile-logo']} alt="Logo"/>
-			<h2 className={styles['title']}>Sign Up</h2>
+			<Heading level={'h1'} className={styles['title']}>Sign Up</Heading>
 			{registerErrorMessage && <div className={styles['error']}>{registerErrorMessage}</div>}
 			<form className={styles['form']} onSubmit={submit} onChange={() => {
 				if (registerErrorMessage) {

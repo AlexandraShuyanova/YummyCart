@@ -1,6 +1,11 @@
 import styles from './IconButton.module.css';
-import type {IconButtonProps} from './IconButton.props.ts';
 import cn from 'classnames';
+import type {ButtonHTMLAttributes, ReactNode} from 'react';
+
+export interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
+	children: ReactNode;
+	variant?: 'default' | 'ghost' | 'plus' | 'minus' | 'remove';
+}
 
 function IconButton({children, className, variant='default', ...props} : IconButtonProps) {
 	return (

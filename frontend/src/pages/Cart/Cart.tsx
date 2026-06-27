@@ -9,8 +9,9 @@ import axios from 'axios';
 import Button from '../../components/Button/Button.tsx';
 import {useNavigate} from 'react-router-dom';
 import {updateCart} from '../../store/cart.slice.ts';
-import Header from '../../components/Header/Header.tsx';
+import Heading from '../../components/Heading/Heading.tsx';
 import arrow from '../../assets/left-arrow.svg';
+import emptyCart from '../../assets/empty-cart.png'
 import IconButton from '../../components/IconButton/IconButton.tsx';
 
 const DELIVERY_FEE = 5;
@@ -66,9 +67,16 @@ export function Cart() {
 				<IconButton className={styles['back']} variant="ghost" onClick={() => navigate(-1)}>
 					<img src={arrow} alt={'Back icon'}></img>
 				</IconButton>
-				<Header>Cart</Header>
+				<Heading>Cart</Heading>
 			</div>
-			{items.length === 0 && <div className={styles['empty']}>Your cart is empty</div>}
+			{items.length === 0 && <div className={styles['empty']}>
+				<img src={emptyCart} className={styles['empty-cart-image']} alt={'Empty cart picture'}></img>
+				<Heading className={styles['empty-cart-title']} level={'h2'}>Your cart is empty</Heading>
+				<div className={styles['empty-cart-description']}>Looks like you haven't added
+					<br/>
+					anything yet.</div>
+				<Button appearance={'big'} className={styles['browse-menu-btn']} onClick={() => navigate('/')}>Browse menu</Button>
+			</div>}
 
 			{items.length > 0 && items.map((i => {
 				const product = cartProducts?.find(p => p.id === i.productId);

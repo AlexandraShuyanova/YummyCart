@@ -1,6 +1,10 @@
 import styles from './Input.module.css';
 import cn from 'classnames';
-import type {InputProps} from './Input.props.ts';
+import type {InputHTMLAttributes} from 'react';
+
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+	isValid?: boolean;
+}
 
 function Input({isValid=true,...props} : InputProps) {
 	return (

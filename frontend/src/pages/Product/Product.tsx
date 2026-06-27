@@ -1,7 +1,7 @@
 import {useLoaderData, useNavigate} from 'react-router-dom';
 import type {Product} from '../../interfaces/product.interface';
 import styles from './Product.module.css';
-import Header from "../../components/Header/Header.tsx";
+import Heading from "../../components/Heading/Heading.tsx";
 import Button from "../../components/Button/Button.tsx";
 import {updateCart} from "../../store/cart.slice.ts";
 import {useDispatch} from "react-redux";
@@ -30,7 +30,7 @@ export function Product() {
 					<IconButton className={styles['back']} variant="ghost" onClick={() => navigate(-1)}>
 						<img src={arrow} alt={'Back icon'}></img>
 					</IconButton>
-					<Header>{product.name}</Header>
+					<Heading level={'h1'}>{product.name}</Heading>
 				</div>
 			</div>
 			<div className={styles['content']}>

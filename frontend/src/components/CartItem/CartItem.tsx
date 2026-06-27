@@ -1,5 +1,4 @@
 import styles from './CartItem.module.css';
-import type {CartItemProps} from './CartItem.props.ts';
 import type {AppDispatch} from '../../store/store.ts';
 import {useDispatch} from 'react-redux';
 import {updateCart} from '../../store/cart.slice.ts';
@@ -7,7 +6,17 @@ import plus from '../../assets/plus.svg';
 import minus from '../../assets/minus.svg';
 import removeIcon from '../../assets/remove.svg';
 import {Link} from 'react-router-dom';
-import IconButton from "../IconButton/IconButton.tsx";
+import IconButton from '../IconButton/IconButton.tsx';
+
+export interface CartItemProps {
+	id: number,
+	className?: string,
+	name: string,
+	image: string,
+	price: number,
+	rating: number,
+	count: number
+}
 
 function CartItem(props: CartItemProps) {
 	const dispatch = useDispatch<AppDispatch>();

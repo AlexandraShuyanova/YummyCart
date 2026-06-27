@@ -7,6 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
 import {login, userActions} from '../../store/user.slice.ts';
 import logo from '../../assets/auth-logo.svg';
+import Heading from "../../components/Heading/Heading.tsx";
 
 export type LoginForm = {
 	email: {
@@ -40,7 +41,7 @@ export function Login() {
 	return (
 		<div className={styles['login']}>
 			<img src={logo} className={styles['mobile-logo']} alt="Logo"/>
-			<h2 className={styles['title']}>Log In</h2>
+			<Heading level={'h1'} className={styles['title']}>Log In</Heading>
 			{loginErrorMessage && <div className={styles['error']}>{loginErrorMessage}</div>}
 			<form className={styles['form']} onSubmit={submit} onChange={() => {
 				if (loginErrorMessage) {

@@ -1,11 +1,21 @@
 import styles from './ProductCard.module.css';
-import type {ProductCardProps} from './ProductCard.props.ts';
 import cartItemButton from '../../assets/cart-button-icon.svg';
 import ratingStar from '../../assets/rating-star.svg';
 import {Link} from 'react-router-dom';
 import type {AppDispatch} from '../../store/store.ts';
 import {useDispatch} from 'react-redux';
 import {updateCart} from '../../store/cart.slice.ts';
+
+export interface ProductCardProps {
+	id: number,
+	className?: string,
+	name: string,
+	description: string,
+	image: string,
+	price: number,
+	rating: number,
+	search?: string
+}
 
 function ProductCard(props: ProductCardProps) {
 	const dispatch = useDispatch<AppDispatch>();

@@ -1,5 +1,5 @@
 import styles from './TopBar.module.css';
-import Header from '../Header/Header.tsx';
+import Heading from '../Heading/Heading.tsx';
 import IconButton from "../IconButton/IconButton.tsx";
 
 type TopBarProps = {
@@ -11,7 +11,7 @@ function TopBar({onOpenMenu, title}:TopBarProps) {
 	return (
 		<div className={styles['top-bar']}>
 			<IconButton className={styles['burger']} variant='ghost' onClick={onOpenMenu}>☰</IconButton>
-			<Header className={styles['title']}>{title}</Header>
+			<Heading className={styles['title']}>{title}</Heading>
 		</div>
 	);
 }
