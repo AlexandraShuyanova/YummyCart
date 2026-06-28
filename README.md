@@ -90,6 +90,15 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 
 ---
 
+### 🛍 Empty Cart
+
+<p align="center">
+  <img width="300" alt="emptyCart" src="https://github.com/user-attachments/assets/6dc3b67c-3832-495b-aab6-3b254ce24aa4" />
+</p>
+<p align="center">
+  Friendly empty state with a custom illustration encouraging users to continue browsing the menu.
+</p>
+
 ### 🔍 Search & Highlight
 
 <p align="center">
