@@ -1,3 +1,4 @@
+
 # 🍔 YummyCart — Fullstack Food Delivery Application
 
 YummyCart is a fullstack food delivery application designed to simulate a real-world ordering system with authentication, cart synchronization, and order processing.
@@ -17,9 +18,10 @@ Live Demo: https://yummy-cart-eta.vercel.app
 - React + TypeScript
 - Redux Toolkit (global state)
 - React Router (createBrowserRouter)
-- Vite (build tool)
-- Axios (API requests)
+- Vite
 - Node.js + Express
+- PostgreSQL
+- Prisma ORM
 - JWT authentication
 - Docker
 
@@ -89,6 +91,15 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 
 ---
 
+### 🛍 Empty Cart
+
+<p align="center">
+  <img width="360" alt="emptyCart" src="https://github.com/user-attachments/assets/6dc3b67c-3832-495b-aab6-3b254ce24aa4" />
+</p>
+<p align="center">
+  Friendly empty state with a custom illustration encouraging users to continue browsing the menu.
+</p>
+
 ### 🔍 Search & Highlight
 
 <p align="center">
@@ -103,11 +114,13 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 ### ✅ Order Success
 
 <p align="center">
- <img width="300" alt="success" src="https://github.com/user-attachments/assets/d3962d19-ec61-48bb-ae5c-bf15e3114cc9" />
+ <img width="360" alt="order" src="https://github.com/user-attachments/assets/2b951d08-3b8d-4846-95b1-02f94621f088" />
 </p>
 <p align="center">
   Order confirmation screen with visual feedback and option to quickly place a new order.
 </p>
+
+
 
 ### 💻 Desktop
 
@@ -146,7 +159,7 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 ### ✅ Order Success
 
 <p align="center">
-<img width="800" src="https://github.com/user-attachments/assets/557f400a-697c-4565-a5bd-d68be5556266"/> 
+<img width="800" alt="order_desctop" src="https://github.com/user-attachments/assets/17957b1d-4843-4d08-9ece-4bf33de38e66" />
 </p>
 
 ---
@@ -176,7 +189,7 @@ Cart is synchronized with backend per user.
 
 Order placement and success screen.
 
-![Order](https://github.com/user-attachments/assets/be3d122b-e3df-4c01-b597-4239edf460ab)
+<img width="1396" height="928" alt="order_new (1)" src="https://github.com/user-attachments/assets/90cf35fc-4d0d-4dd9-96e3-f9cde4713217" />
 
 ---
 
@@ -217,17 +230,11 @@ Global state is managed with Redux Toolkit and split into two slices:
 ## ⚙️ Backend
 
 - REST API built with Express.js
+- PostgreSQL database
+- Prisma ORM
 - JWT middleware for protected routes
-- bcrypt for password hashing
-- In-memory storage (mock database)
-
----
-
-## ⚠️ Notes
-
-- Data is stored in-memory (no persistent database)
-- Data resets on server restart (free tier limitation)
-- Can be extended with PostgreSQL or MongoDB
+- bcrypt password hashing
+- Relational data model (users, products, carts, orders)
 
 ---
 
@@ -239,7 +246,9 @@ Global state is managed with Redux Toolkit and split into two slices:
 
 ## 📌 Future Improvements
 
-- Add persistent database (PostgreSQL / MongoDB)
-- Improve validation (frontend + backend)
-- Add debounce for search
-- Add loading skeletons
+- Server-side pagination
+- Advanced filtering & sorting
+- Debounced search
+- Loading skeletons
+- Product reviews
+- Admin panel
