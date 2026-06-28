@@ -190,6 +190,7 @@ Cart is synchronized with backend per user.
 Order placement and success screen.
 
 <img width="1396" height="928" alt="order_new (1)" src="https://github.com/user-attachments/assets/90cf35fc-4d0d-4dd9-96e3-f9cde4713217" />
+
 ---
 
 ## 🧠 State Management (Redux)
@@ -229,17 +230,11 @@ Global state is managed with Redux Toolkit and split into two slices:
 ## ⚙️ Backend
 
 - REST API built with Express.js
+- PostgreSQL database
+- Prisma ORM
 - JWT middleware for protected routes
-- bcrypt for password hashing
-- In-memory storage (mock database)
-
----
-
-## ⚠️ Notes
-
-- Data is stored in-memory (no persistent database)
-- Data resets on server restart (free tier limitation)
-- Can be extended with PostgreSQL or MongoDB
+- bcrypt password hashing
+- Relational data model (users, products, carts, orders)
 
 ---
 
@@ -251,7 +246,9 @@ Global state is managed with Redux Toolkit and split into two slices:
 
 ## 📌 Future Improvements
 
-- Add persistent database (PostgreSQL / MongoDB)
-- Improve validation (frontend + backend)
-- Add debounce for search
-- Add loading skeletons
+- Server-side pagination
+- Advanced filtering & sorting
+- Debounced search
+- Loading skeletons
+- Product reviews
+- Admin panel
