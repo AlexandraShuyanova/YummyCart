@@ -158,7 +158,7 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 ### ✅ Order Success
 
 <p align="center">
-<img width="800" src="https://github.com/user-attachments/assets/557f400a-697c-4565-a5bd-d68be5556266"/> 
+<img width="800" alt="order_desctop" src="https://github.com/user-attachments/assets/17957b1d-4843-4d08-9ece-4bf33de38e66" />
 </p>
 
 ---
