@@ -1,3 +1,4 @@
+
 # 🍔 YummyCart — Fullstack Food Delivery Application
 
 YummyCart is a fullstack food delivery application designed to simulate a real-world ordering system with authentication, cart synchronization, and order processing.
@@ -188,8 +189,7 @@ Cart is synchronized with backend per user.
 
 Order placement and success screen.
 
-![Order](https://github.com/user-attachments/assets/be3d122b-e3df-4c01-b597-4239edf460ab)
-
+<img width="1396" height="928" alt="order_new (1)" src="https://github.com/user-attachments/assets/90cf35fc-4d0d-4dd9-96e3-f9cde4713217" />
 ---
 
 ## 🧠 State Management (Redux)
