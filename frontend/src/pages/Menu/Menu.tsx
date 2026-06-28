@@ -5,7 +5,6 @@ import {PREFIX} from '../../helpers/API.ts';
 import type {Product} from '../../interfaces/product.interface.ts';
 import {useEffect, useState} from 'react';
 import axios, {AxiosError} from 'axios';
-import Pagination from '../../components/Pagination/Pagination.tsx';
 import TopBar from '../../components/TopBar/TopBar.tsx';
 import { useOutletContext } from 'react-router-dom';
 import CartBar from "../../components/CartBar/CartBar.tsx";
@@ -29,7 +28,7 @@ function Menu() {
 	const [error, setError] = useState<string | undefined>();
 	const SIZE = 6;
 	const [page, setPage] = useState<number>(1);
-	const [totalPages, setTotalPages] = useState<number>(1);
+	/*const [totalPages, setTotalPages] = useState<number>(1);*/
 	const [search, setSearch] = useState<string>('');
 	const { onOpenMenu } = useOutletContext<{ onOpenMenu: () => void }>();
 
@@ -39,7 +38,7 @@ function Menu() {
 				setIsLoading(true);
 				const {data} = await axios.get<ProductsPagedResponse>(`${PREFIX}/products-paged/?page=${page - 1}&size=${SIZE}&filter=${search}`);
 				setProducts(data.items);
-				setTotalPages(data.totalPages);
+				/*setTotalPages(data.totalPages);*/
 				setIsLoading(false);
 			} catch (e) {
 				console.error(e);
