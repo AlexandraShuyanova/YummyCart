@@ -17,9 +17,10 @@ Live Demo: https://yummy-cart-eta.vercel.app
 - React + TypeScript
 - Redux Toolkit (global state)
 - React Router (createBrowserRouter)
-- Vite (build tool)
-- Axios (API requests)
+- Vite
 - Node.js + Express
+- PostgreSQL
+- Prisma ORM
 - JWT authentication
 - Docker
 
