@@ -170,7 +170,8 @@ app.get('/pizza-api/user/profile', auth, async (req: AuthRequest, res: Response)
 
 
 app.get('/pizza-api/products', async(req: Request, res: Response) => {
-    const filter = String(req.query.filter ?? '');
+    const filter = String(req.query.filter ?? '').toLowerCase();
+    console.log(filter);
 
     let products = await prisma.product.findMany({
         where: {
@@ -329,7 +330,7 @@ app.get('/pizza-api/products-paged', async(req: Request, res: Response) => {
         order = 'asc',
     } = req.query;
 
-    const filter = String(req.query.filter ?? '');
+    const filter = String(req.query.filter ?? '').toLowerCase();
 
     let products = await prisma.product.findMany({
         where: {
