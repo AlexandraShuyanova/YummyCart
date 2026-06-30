@@ -66,9 +66,9 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 </p>
 
 <p align="center">
-  <b>Menu</b>
+  <b>1.Menu</b>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Product</b>
+  <b>2.Product</b>
 </p>
 
 <br>
@@ -80,9 +80,9 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 </p>
 
 <p align="center">
-  <b>Search & Highlight</b>
+  <b>3.Search & Highlight</b>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Empty Cart</b>
+  <b>4.Empty Cart</b>
 </p>
 
 <br>
@@ -94,23 +94,23 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 </p>
 
 <p align="center">
-  <b>Cart</b>
+  <b>5.Cart</b>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Order Success</b>
+  <b>6.Order Success</b>
 </p>
 
 <br>
 
 <p align="center">
-  <img width="250" alt="Registration" src="https://github.com/user-attachments/assets/b7c29912-6f85-41db-8acd-9f143d9c4da1" />
+  <img width="250" alt="Register" src="https://github.com/user-attachments/assets/797d643f-f06c-4e24-9a85-39853005d278" />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img width="250" alt="Login" src="https://github.com/user-attachments/assets/adb0a920-2972-47f6-bfbe-2a74e9e94a39" />
+<img width="250" alt="Login" src="https://github.com/user-attachments/assets/8139eeb8-9832-4595-8cf3-8be1e76f8db4" />
 </p>
 
 <p align="center">
-  <b>Registration</b>
+  <b>7.Registration</b>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Login</b>
+  <b>8.Login</b>
 </p>
 
 
