@@ -108,7 +108,7 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 </p>
 
 <p align="center">
-  <b>Registartion</b>
+  <b>Registration</b>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <b>Login</b>
 </p>
