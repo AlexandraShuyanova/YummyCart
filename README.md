@@ -68,7 +68,7 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 <p align="center">
   <b>1. Menu</b>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>2. Product's page</b>
+  <b>2. Product Page</b>
 </p>
 
 <br>
@@ -116,7 +116,19 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 
 ### 💻 Desktop
 
-### 🍕 Menu
+<p align="center">
+  <img width="400" src="https://github.com/user-attachments/assets/4af45b20-9e5c-4a67-9510-72dc61b93dbd alt="Menu" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img width="400" src="https://github.com/user-attachments/assets/3dbfe10b-1304-446a-85ef-12a4d5f67d85" alt="Product Page"/> 
+</p>
+
+<p align="center">
+  <b>1. Menu</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>2. Product Page</b>
+</p>
+
+<br>
 
 <p align="center">
   <img width="800" src="https://github.com/user-attachments/assets/4af45b20-9e5c-4a67-9510-72dc61b93dbd" />
