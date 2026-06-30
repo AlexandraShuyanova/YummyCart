@@ -58,22 +58,6 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 
 ## 📸 Screenshots
 ### 📱 Mobile 
-### 🍕 Menu
-
-| Menu | Product |
-|------|---------|
-| <img width="280" src="https://github.com/user-attachments/assets/6aae5a42-989d-4306-826a-cdd42f2166a5" /> | <img width="280" src="https://github.com/user-attachments/assets/2cb0d0a0-1c0d-4a5d-8b97-9b924c1633f9" /> |
-
----
-
-<p align="center">
-  <img width="300" alt="menu-mobile" src="https://github.com/user-attachments/assets/6aae5a42-989d-4306-826a-cdd42f2166a5" />
-</p>
-<p align="center">
-  Main menu with product listing, categories, and quick access to cart.
-</p>
-
----
 
 <p align="center">
   <img width="270" src="https://github.com/user-attachments/assets/6aae5a42-989d-4306-826a-cdd42f2166a5" alt="Menu"/>
@@ -81,16 +65,20 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 </p>
 
 <p align="center">
-  <b>Empty Cart</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Search</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>Order Success</b>
+  <img width="270" src="https://github.com/user-attachments/assets/6aae5a42-989d-4306-826a-cdd42f2166a5" alt="Menu"/>
+  <img width="270" src="https://github.com/user-attachments/assets/2cb0d0a0-1c0d-4a5d-8b97-9b924c1633f9" alt="Product"/>
 </p>
 
 <p align="center">
-  <img width="220" src="..." alt="Empty Cart"/>
-  <img width="220" src="..." alt="Search"/>
-  <img width="220" src="..." alt="Order Success"/>
+  <img width="270" src="https://github.com/user-attachments/assets/cfc735bb-19da-4e20-a16f-8e7b53148b11" alt="Cart"/>
+  <img width="270" src="https://github.com/user-attachments/assets/6dc3b67c-3832-495b-aab6-3b254ce24aa4" alt="Empty Cart"/>
 </p>
+
+<p align="center">
+  <img width="270" src="https://github.com/user-attachments/assets/c78b4d8f-503f-470d-bb6f-07ab3ad1b2ad" alt="Search & Highlight"/>
+  <img width="270" src="https://github.com/user-attachments/assets/2b951d08-3b8d-4846-95b1-02f94621f088" alt="Order Success"/>
+</p>
+
 
 ### 📄 Product
 
