@@ -74,14 +74,12 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 <br>
 
 <p align="center">
-  <img width="300" src="https://github.com/user-attachments/assets/6aae5a42-989d-4306-826a-cdd42f2166a5" alt="Menu"/>
-  <img width="300" src="https://github.com/user-attachments/assets/2cb0d0a0-1c0d-4a5d-8b97-9b924c1633f9" alt="Product"/>
+  <img width="250" src="https://github.com/user-attachments/assets/c78b4d8f-503f-470d-bb6f-07ab3ad1b2ad" alt="Search & Highlight"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img width="250" src="https://github.com/user-attachments/assets/6dc3b67c-3832-495b-aab6-3b254ce24aa4" alt="Empty Cart"/>
 </p>
 
-<p align="center">
-  <img width="300" src="https://github.com/user-attachments/assets/c78b4d8f-503f-470d-bb6f-07ab3ad1b2ad" alt="Search & Highlight"/>
-  <img width="300" src="https://github.com/user-attachments/assets/6dc3b67c-3832-495b-aab6-3b254ce24aa4" alt="Empty Cart"/>
-</p>
+<br>
 
 <p align="center">
   <img width="300" src="https://github.com/user-attachments/assets/cfc735bb-19da-4e20-a16f-8e7b53148b11" alt="Cart"/>
