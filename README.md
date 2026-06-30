@@ -56,114 +56,6 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 
 ---
 
-## 📸 Screenshots
-### 📱 Mobile 
-### 🍕 Menu
-
-<p align="center">
-  <img width="300" alt="menu-mobile" src="https://github.com/user-attachments/assets/6aae5a42-989d-4306-826a-cdd42f2166a5" />
-</p>
-<p align="center">
-  Main menu with product listing, categories, and quick access to cart.
-</p>
-
----
-
-### 📄 Product
-
-<p align="center">
-  <img width="300" alt="dish-mobile" src="https://github.com/user-attachments/assets/2cb0d0a0-1c0d-4a5d-8b97-9b924c1633f9" />
-</p>
-<p align="center">
-  Product details page with price, rating, and ingredients.
-</p>
-
----
-
-### 🛒 Cart
-
-<p align="center">
-  <img width="300" alt="cart" src="https://github.com/user-attachments/assets/cfc735bb-19da-4e20-a16f-8e7b53148b11" />
-</p>
-<p align="center">
-  Shopping cart with item management, quantity controls, and order summary. Includes dynamic price calculation and user-friendly layout.
-</p>
-
----
-
-### 🛍 Empty Cart
-
-<p align="center">
-  <img width="360" alt="emptyCart" src="https://github.com/user-attachments/assets/6dc3b67c-3832-495b-aab6-3b254ce24aa4" />
-</p>
-<p align="center">
-  Friendly empty state with a custom illustration encouraging users to continue browsing the menu.
-</p>
-
-### 🔍 Search & Highlight
-
-<p align="center">
-  <img width="300" alt="search" src="https://github.com/user-attachments/assets/c78b4d8f-503f-470d-bb6f-07ab3ad1b2ad" />
-</p>
-<p align="center">
-  Search functionality with real-time filtering and keyword highlighting in product names and ingredients.
-</p>
-
----
-
-### ✅ Order Success
-
-<p align="center">
- <img width="360" alt="order" src="https://github.com/user-attachments/assets/2b951d08-3b8d-4846-95b1-02f94621f088" />
-</p>
-<p align="center">
-  Order confirmation screen with visual feedback and option to quickly place a new order.
-</p>
-
-
-
-### 💻 Desktop
-
-### 🍕 Menu
-
-<p align="center">
-  <img width="800" src="https://github.com/user-attachments/assets/4af45b20-9e5c-4a67-9510-72dc61b93dbd" />
-</p>
-
----
-
-### 🔍 Search & Highlight
-
-<p align="center">
-<img width="800" src="https://github.com/user-attachments/assets/bf96c160-bbc1-465e-bb28-7936cc3e77e1"/> 
-</p>
-
----
-
-### 📄 Product
-
-<p align="center">
-<img width="800" src="https://github.com/user-attachments/assets/3dbfe10b-1304-446a-85ef-12a4d5f67d85"/> 
-</p>
-
----
-
-### 🛒 Cart
-
-<p align="center">
-<img width="800" src="https://github.com/user-attachments/assets/a0d66a80-2b49-41a9-a612-9016729b48f1"/> 
-</p>
-
----
-
-### ✅ Order Success
-
-<p align="center">
-<img width="800" alt="order_desctop" src="https://github.com/user-attachments/assets/17957b1d-4843-4d08-9ece-4bf33de38e66" />
-</p>
-
----
-
 ## 🎥 Demo
 
 ### 🔐 Authentication
@@ -192,6 +84,63 @@ Order placement and success screen.
 <img width="1396" height="928" alt="order_new (1)" src="https://github.com/user-attachments/assets/90cf35fc-4d0d-4dd9-96e3-f9cde4713217" />
 
 ---
+
+## 📸 Screenshots
+### 📱 Mobile 
+
+<p align="center">
+  <img width="250" src="https://github.com/user-attachments/assets/6aae5a42-989d-4306-826a-cdd42f2166a5" alt="Menu"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img width="250" src="https://github.com/user-attachments/assets/2cb0d0a0-1c0d-4a5d-8b97-9b924c1633f9" alt="Product"/>
+</p>
+
+<p align="center">
+  <b>Menu</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Product Page</b>
+</p>
+
+<br>
+
+<p align="center">
+  <img width="250" src="https://github.com/user-attachments/assets/c78b4d8f-503f-470d-bb6f-07ab3ad1b2ad" alt="Search & Highlight"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img width="250" src="https://github.com/user-attachments/assets/6dc3b67c-3832-495b-aab6-3b254ce24aa4" alt="Empty Cart"/>
+</p>
+
+<p align="center">
+  <b>Search & Highlight</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Empty Cart</b>
+</p>
+
+<br>
+
+<p align="center">
+  <img width="250" src="https://github.com/user-attachments/assets/cfc735bb-19da-4e20-a16f-8e7b53148b11" alt="Cart"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img width="250" src="https://github.com/user-attachments/assets/2b951d08-3b8d-4846-95b1-02f94621f088" alt="Order Success"/>
+</p>
+
+<p align="center">
+  <b>Cart</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Order Success</b>
+</p>
+
+<br>
+
+<p align="center">
+  <img width="250" alt="Register" src="https://github.com/user-attachments/assets/797d643f-f06c-4e24-9a85-39853005d278" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img width="250" alt="Login" src="https://github.com/user-attachments/assets/8139eeb8-9832-4595-8cf3-8be1e76f8db4" />
+</p>
+
+<p align="center">
+  <b>Sign Up</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Login</b>
+</p>
 
 ## 🧠 State Management (Redux)
 
