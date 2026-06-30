@@ -60,6 +60,12 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 ### 📱 Mobile 
 ### 🍕 Menu
 
+| Menu | Product |
+|------|---------|
+| <img width="280" src="https://github.com/user-attachments/assets/6aae5a42-989d-4306-826a-cdd42f2166a5" /> | <img width="280" src="https://github.com/user-attachments/assets/2cb0d0a0-1c0d-4a5d-8b97-9b924c1633f9" /> |
+
+---
+
 <p align="center">
   <img width="300" alt="menu-mobile" src="https://github.com/user-attachments/assets/6aae5a42-989d-4306-826a-cdd42f2166a5" />
 </p>
@@ -132,6 +138,14 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 
 ---
 
+### 📄 Product
+
+<p align="center">
+<img width="800" src="https://github.com/user-attachments/assets/3dbfe10b-1304-446a-85ef-12a4d5f67d85"/> 
+</p>
+
+---
+
 ### 🔍 Search & Highlight
 
 <p align="center">
@@ -140,13 +154,7 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 
 ---
 
-### 📄 Product
 
-<p align="center">
-<img width="800" src="https://github.com/user-attachments/assets/3dbfe10b-1304-446a-85ef-12a4d5f67d85"/> 
-</p>
-
----
 
 ### 🛒 Cart
 
