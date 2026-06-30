@@ -66,9 +66,9 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 </p>
 
 <p align="center">
-  <b>1.Menu</b>
+  <b>1. Menu</b>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>2.Product</b>
+  <b>2. Product's page</b>
 </p>
 
 <br>
@@ -80,9 +80,9 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 </p>
 
 <p align="center">
-  <b>3.Search & Highlight</b>
+  <b>3. Search & Highlight</b>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>4.Empty Cart</b>
+  <b>4. Empty Cart</b>
 </p>
 
 <br>
@@ -94,9 +94,9 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 </p>
 
 <p align="center">
-  <b>5.Cart</b>
+  <b>5. Cart</b>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>6.Order Success</b>
+  <b>6. Order Success</b>
 </p>
 
 <br>
@@ -108,9 +108,9 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 </p>
 
 <p align="center">
-  <b>7.Registration</b>
+  <b>7. Sign Up</b>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>8.Login</b>
+  <b>8. Login</b>
 </p>
 
 
