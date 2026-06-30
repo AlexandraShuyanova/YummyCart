@@ -100,59 +100,6 @@ The architecture supports both mobile and desktop layouts without duplicating lo
 </p>
 
 
-### 📄 Product
-
-<p align="center">
-  <img width="300" alt="dish-mobile" src="https://github.com/user-attachments/assets/2cb0d0a0-1c0d-4a5d-8b97-9b924c1633f9" />
-</p>
-<p align="center">
-  Product details page with price, rating, and ingredients.
-</p>
-
----
-
-### 🛒 Cart
-
-<p align="center">
-  <img width="300" alt="cart" src="https://github.com/user-attachments/assets/cfc735bb-19da-4e20-a16f-8e7b53148b11" />
-</p>
-<p align="center">
-  Shopping cart with item management, quantity controls, and order summary. Includes dynamic price calculation and user-friendly layout.
-</p>
-
----
-
-### 🛍 Empty Cart
-
-<p align="center">
-  <img width="360" alt="emptyCart" src="https://github.com/user-attachments/assets/6dc3b67c-3832-495b-aab6-3b254ce24aa4" />
-</p>
-<p align="center">
-  Friendly empty state with a custom illustration encouraging users to continue browsing the menu.
-</p>
-
-### 🔍 Search & Highlight
-
-<p align="center">
-  <img width="300" alt="search" src="https://github.com/user-attachments/assets/c78b4d8f-503f-470d-bb6f-07ab3ad1b2ad" />
-</p>
-<p align="center">
-  Search functionality with real-time filtering and keyword highlighting in product names and ingredients.
-</p>
-
----
-
-### ✅ Order Success
-
-<p align="center">
- <img width="360" alt="order" src="https://github.com/user-attachments/assets/2b951d08-3b8d-4846-95b1-02f94621f088" />
-</p>
-<p align="center">
-  Order confirmation screen with visual feedback and option to quickly place a new order.
-</p>
-
-
-
 ### 💻 Desktop
 
 ### 🍕 Menu
