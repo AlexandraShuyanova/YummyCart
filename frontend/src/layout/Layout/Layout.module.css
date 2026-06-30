@@ -66,6 +66,9 @@
     left: 0;
     width: 280px;
     height: 100dvh;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    overflow: hidden;
     background: white;
     z-index: 1000;
 

@@ -10,6 +10,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import type {AppDispatch, RootState} from '../../store/store.ts';
 import {userActions} from '../../store/user.slice.ts';
 import IconButton from '../IconButton/IconButton.tsx';
+import { X } from 'lucide-react';
 
 type SideBarProps = {
 	onMenuOpen?: (value: boolean) => void;
@@ -44,7 +45,7 @@ function SideBar({onMenuOpen, isMobile=false} : SideBarProps) {
 				variant="ghost"
 				onClick={() => onMenuOpen?.(false)}
 			>
-                ✕
+				<X size={26} strokeWidth={2} />
 			</IconButton>
 			<div className={styles['menu']}>
 				<NavLink to='/'
