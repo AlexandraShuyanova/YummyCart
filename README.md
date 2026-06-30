@@ -99,6 +99,20 @@ The architecture supports both mobile and desktop layouts without duplicating lo
   <b>Order Success</b>
 </p>
 
+<br>
+
+<p align="center">
+  <img width="250" alt="Registration" src="https://github.com/user-attachments/assets/b7c29912-6f85-41db-8acd-9f143d9c4da1" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img width="250" alt="Login" src="https://github.com/user-attachments/assets/adb0a920-2972-47f6-bfbe-2a74e9e94a39" />
+</p>
+
+<p align="center">
+  <b>Registartion</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Login</b>
+</p>
+
 
 ### 💻 Desktop
 
