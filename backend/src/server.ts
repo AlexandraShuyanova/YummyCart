@@ -331,24 +331,48 @@ app.get('/pizza-api/products-paged', async(req: Request, res: Response) => {
     } = req.query;
 
     const filter = String(req.query.filter ?? '').toLowerCase();
+    const categoryId = Number(req.query.categoryId);
 
-    let products = await prisma.product.findMany({
-        where: {
-            OR: [
-                {
-                    name: {
-                        contains: filter,
-                        mode: 'insensitive'
+    let products;
+
+    if (filter) {
+        products = await prisma.product.findMany({
+            where: {
+                OR: [
+                    {
+                        name: {
+                            contains: filter,
+                            mode: 'insensitive'
+                        }
+                    },
+                    {
+                        ingredients: {
+                            has: filter
+                        }
                     }
-                },
-                {
-                    ingredients: {
-                        has: filter
+                ]
+            },
+        })
+    } else if (!Number.isNaN(categoryId)) {
+        products = await prisma.product.findMany({
+            where: {
+                categories: {
+                    some: {
+                        id: categoryId
                     }
                 }
-            ]
-        },
-    })
+            }
+        });
+    } else {
+        return res.json({
+            page: page,
+            size: size,
+            total: size,
+            totalPages: 1,
+            items: []
+        });
+    }
+
 
     /*let list = [...products];
 
@@ -385,6 +409,29 @@ app.get('/pizza-api/products-paged', async(req: Request, res: Response) => {
         items: products
     })
 });
+
+app.get('/pizza-api/categories', async(req: Request, res: Response) => {
+    const categories = await prisma.category.findMany();
+
+    res.json(categories)
+});
+
+app.get('/pizza-api/categories/:id', async(req: Request, res: Response) => {
+    const id = Number(req.params.id);
+    const category = await prisma.category.findUnique({
+        where: {
+            id
+        },
+        include: {
+            products: true
+        }
+    })
+    if (!category)
+        return res.status(404).json({
+            error: 'Not found'
+        });
+    res.json(category?.products);
+})
 
 app.get('/pizza-api/products/:id', async(req: Request, res: Response) => {
     const id = Number(req.params.id);

@@ -47,7 +47,7 @@ function CartItem(props: CartItemProps) {
 
 	return (
 		<div className={styles['item']}>
-			<Link to={`/product/${props.id}`} className={styles['link']}>
+			<Link to={`/products/${props.id}`} className={styles['link']}>
 				<div className={styles['image']} style={{backgroundImage: `url(${props.image})`}}></div>
 			</Link>
 			<div className={styles['description']}>

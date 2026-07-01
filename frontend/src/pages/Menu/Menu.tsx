@@ -7,10 +7,11 @@ import {useEffect, useState} from 'react';
 import axios, {AxiosError} from 'axios';
 import TopBar from '../../components/TopBar/TopBar.tsx';
 import { useOutletContext } from 'react-router-dom';
-import CartBar from "../../components/CartBar/CartBar.tsx";
-import {useSelector} from "react-redux";
-import type {RootState} from "../../store/store.ts";
-import IconButton from "../../components/IconButton/IconButton.tsx";
+import CartBar from '../../components/CartBar/CartBar.tsx';
+import {useSelector} from 'react-redux';
+import type {RootState} from '../../store/store.ts';
+import IconButton from '../../components/IconButton/IconButton.tsx';
+import cn from 'classnames';
 
 function Menu() {
 
@@ -22,7 +23,13 @@ function Menu() {
 		items: Product[];
 	};
 
+	type Category = {
+		id: number;
+		name: string;
+	}
+
 	const [products, setProducts] = useState<Product[]>([]);
+	const [categories, setCategories] = useState<Category[]>([]);
 	const cartItems = useSelector((state: RootState) => state.cart.items);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
 	const [error, setError] = useState<string | undefined>();
@@ -30,17 +37,43 @@ function Menu() {
 	const [page, setPage] = useState<number>(1);
 	/*const [totalPages, setTotalPages] = useState<number>(1);*/
 	const [search, setSearch] = useState<string>('');
+	const [activeCategory, setActiveCategory] = useState<number | null>(null);
 	const { onOpenMenu } = useOutletContext<{ onOpenMenu: () => void }>();
 
 	useEffect(() => {
-		const loadMenu = async() => {
+		const loadCategories = async() => {
+			try {
+				const {data} = await axios.get<Category[]>(`${PREFIX}/categories`);
+				setCategories(data);
+				if (data.length > 0) {
+					setActiveCategory(data[0].id);
+				}
+			} catch (e) {
+				console.error(e);
+				if (e instanceof AxiosError) {
+					setError(e.message);
+				}
+				return;
+			}
+		};
+		loadCategories();
+	}, []);
+
+	useEffect(() => {
+		const loadProducts = async () => {
 			try {
 				setIsLoading(true);
-				const {data} = await axios.get<ProductsPagedResponse>(`${PREFIX}/products-paged/?page=${page - 1}&size=${SIZE}&filter=${search}`);
+				const {data} = await axios.get<ProductsPagedResponse>(`${PREFIX}/products-paged`, {
+					params: {
+						page: page - 1,
+						size: SIZE,
+						filter: search,
+						categoryId: activeCategory
+					}
+				});
 				setProducts(data.items);
-				/*setTotalPages(data.totalPages);*/
 				setIsLoading(false);
-			} catch (e) {
+			} catch(e) {
 				console.error(e);
 				if (e instanceof AxiosError) {
 					setError(e.message);
@@ -49,14 +82,14 @@ function Menu() {
 				return;
 			}
 		};
-		loadMenu();
-	}, [page, search]);
+		loadProducts();
+	}, [page, search, activeCategory]);
 
 	return (
 		<div className={styles['menu-wrapper']}>
 			<div className={styles['header']}>
 				<div className={styles['header-top']}>
-					<TopBar title={'Menu'} onOpenMenu={onOpenMenu}/>
+					<TopBar onOpenMenu={onOpenMenu}/>
 					<Search
 						className={styles['search-input']}
 						onSearch={(value) => {
@@ -71,9 +104,16 @@ function Menu() {
 					</IconButton>
 				</div>
 				<div className={styles['tabs']}>
-					<button className={styles['tab-active']} type="button">Popular</button>
-					<button className={styles['tab']} type="button">Mains</button>
-					<button className={styles['tab']} type="button">Salads</button>
+					{categories.length > 0 && categories.map(category => (
+						<button
+							key={category.id}
+							type="button"
+							onClick={() => setActiveCategory(category.id)}
+							className={cn(styles['tab'], {
+								[styles['tab-active']]: activeCategory === category.id
+							})}
+						>{category.name}</button>
+					))}
 				</div>
 			</div>
 			<div className={styles['cards-container']}>

@@ -42,7 +42,7 @@ function ProductCard(props: ProductCardProps) {
 	}
 
 	return (
-		<Link to={`/product/${props.id}`} className={styles['link']}>
+		<Link to={`/products/${props.id}`} className={styles['link']}>
 			<div key={props.id} className={styles['product-card']}>
 				<div className={styles['head']} style={{
 					backgroundImage: `url(${props.image})`,

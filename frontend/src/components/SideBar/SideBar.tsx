@@ -45,7 +45,7 @@ function SideBar({onMenuOpen, isMobile=false} : SideBarProps) {
 				variant="ghost"
 				onClick={() => onMenuOpen?.(false)}
 			>
-				<X size={26} strokeWidth={2} />
+				<X size={24} strokeWidth={2} />
 			</IconButton>
 			<div className={styles['menu']}>
 				<NavLink to='/'

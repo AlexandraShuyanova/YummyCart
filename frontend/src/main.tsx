@@ -1,7 +1,7 @@
 import {lazy, StrictMode, Suspense} from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import {createBrowserRouter, Navigate, RouterProvider} from 'react-router-dom';
 import {Cart} from './pages/Cart/Cart.tsx';
 import {Error as ErrorPage} from './pages/Error/Error.tsx';
 import {Layout} from './layout/Layout/Layout.tsx';
@@ -25,14 +25,20 @@ const router = createBrowserRouter(
 			children: [
 				{
 					index: true,
-					element: (<Suspense fallback={<>Loading...</>}><Menu /></Suspense>)
+					element: <Navigate to="products" replace />
+				},
+				{
+					path: 'products',
+					element: (<Suspense fallback={<>Loading...</>}>
+						<Menu />
+					</Suspense>)
 				},
 				{
 					path: 'cart',
 					element: <Cart />
 				},
 				{
-					path: 'product/:id',
+					path: 'products/:id',
 					element: (
 						<Suspense fallback={<>Loading...</>}>
 							<Product />
