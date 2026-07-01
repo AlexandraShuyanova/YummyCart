@@ -1,13 +1,20 @@
 .input {
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 14px;
     color: var(--text-color);
     border-radius: 10px;
     padding: 16px 30px 16px 44px;
     text-decoration: none;
-    background: #F9FAFB;
-    border: 1px solid #E5E7EB;
+    background: #F3F4F6;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.input::placeholder {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-third-color);
 }
 
 .input-wrapper {
@@ -37,11 +44,6 @@
         background: #F3F4F6;
         border: none;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-    }
-    .input::placeholder {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--text-third-color);
     }
     .icon {
         position: absolute;

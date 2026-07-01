@@ -2,7 +2,7 @@ import styles from './Heading.module.css';
 import cn from 'classnames';
 import type {HTMLAttributes, ReactNode} from 'react';
 
-export interface HeadingProps extends HTMLAttributes<HTMLElement>{
+interface HeadingProps extends HTMLAttributes<HTMLElement>{
 	level?: 'h1' | 'h2' | 'h3',
 	children: ReactNode;
 }

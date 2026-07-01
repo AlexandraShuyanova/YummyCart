@@ -38,6 +38,7 @@ function Menu() {
 	/*const [totalPages, setTotalPages] = useState<number>(1);*/
 	const [search, setSearch] = useState<string>('');
 	const [activeCategory, setActiveCategory] = useState<number | null>(null);
+	const [isSearchFocused, setIsSearchFocused] = useState<boolean>(false);
 	const { onOpenMenu } = useOutletContext<{ onOpenMenu: () => void }>();
 
 	useEffect(() => {
@@ -88,32 +89,67 @@ function Menu() {
 	return (
 		<div className={styles['menu-wrapper']}>
 			<div className={styles['header']}>
-				<div className={styles['header-top']}>
-					<TopBar onOpenMenu={onOpenMenu}/>
+				<div className={styles['desktop-header']}>
+					<div className={cn(styles['tabs'], {
+						[styles['hidden']]: isSearchFocused
+					})}>
+						{categories.length > 0 && categories.map(category => (
+							<button
+								key={category.id}
+								type="button"
+								onClick={() => setActiveCategory(category.id)}
+								className={cn(styles['tab'], {
+									[styles['tab-active']]: activeCategory === category.id
+								})}
+							>{category.name}</button>
+						))}
+					</div>
 					<Search
-						className={styles['search-input']}
+						className={cn(styles['search'], {
+							[styles['active']]: isSearchFocused
+						})}
+						onFocus={()=> setIsSearchFocused(true)}
+						onBlur={()=>setIsSearchFocused(false)}
 						onSearch={(value) => {
 							setSearch(value);
 							setPage(1);
 						}}
 					/>
-					<IconButton className={styles['header-more-button']} variant="ghost" type="button" aria-label="More options">
-						<span></span>
-						<span></span>
-						<span></span>
-					</IconButton>
 				</div>
-				<div className={styles['tabs']}>
-					{categories.length > 0 && categories.map(category => (
-						<button
-							key={category.id}
-							type="button"
-							onClick={() => setActiveCategory(category.id)}
-							className={cn(styles['tab'], {
-								[styles['tab-active']]: activeCategory === category.id
+				<div className={styles['mobile-header']}>
+					<div className={styles['mobile-header-top']}>
+						<TopBar onOpenMenu={onOpenMenu}/>
+						<Search
+							className={cn(styles['search'], {
+								[styles['search-active']]: isSearchFocused
 							})}
-						>{category.name}</button>
-					))}
+							onFocus={()=> setIsSearchFocused(true)}
+							onBlur={()=>setIsSearchFocused(false)}
+							onSearch={(value) => {
+								setSearch(value);
+								setPage(1);
+							}}
+						/>
+						<IconButton className={styles['header-more-button']} variant="ghost" type="button" aria-label="More options">
+							<span></span>
+							<span></span>
+							<span></span>
+						</IconButton>
+					</div>
+					<div className={cn(styles['tabs'], {
+						[styles['search-active']]: isSearchFocused
+					})}>
+						{categories.length > 0 && categories.map(category => (
+							<button
+								key={category.id}
+								type="button"
+								onClick={() => setActiveCategory(category.id)}
+								className={cn(styles['tab'], {
+									[styles['tab-active']]: activeCategory === category.id
+								})}
+							>{category.name}</button>
+						))}
+					</div>
 				</div>
 			</div>
 			<div className={styles['cards-container']}>
